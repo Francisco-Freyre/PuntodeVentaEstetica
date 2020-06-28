@@ -17,6 +17,8 @@ namespace PuntodeVentaEstetica
             InitializeComponent();
         }
 
+        //Metodos para la animacion del SideBar ###################################
+        #region
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -27,11 +29,6 @@ namespace PuntodeVentaEstetica
             this.WindowState = FormWindowState.Normal;
             btnMaximizar.Visible = true;
             btnRestaurar.Visible = false;
-        }
-
-        private void contenido_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnMaximizar_Click(object sender, EventArgs e)
@@ -46,14 +43,9 @@ namespace PuntodeVentaEstetica
             Application.Exit();
         }
 
-        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            if(bunifuGradientPanel1.Width == 225)
+            if (bunifuGradientPanel1.Width == 225)
             {
                 bunifuGradientPanel1.Visible = false;
                 bunifuGradientPanel1.Width = 68;
@@ -68,5 +60,19 @@ namespace PuntodeVentaEstetica
                 AnimationSideBarBack.Show(bunifuGradientPanel1);
             }
         }
+        #endregion
+
+        //Metodos creados por error sin funcion ########################
+        #region
+        private void contenido_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        #endregion
+
     }
 }
