@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuTop = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
@@ -49,19 +51,32 @@
             this.lineaSideBar = new Bunifu.Framework.UI.BunifuSeparator();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contenido = new System.Windows.Forms.Panel();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.CurvaSidebar = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.AnimationSidebar = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.AnimationSideBarBack = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.CurvaSidebar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.AnimationSidebar = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.AnimationSideBarBack = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.txtUsuarioNombre = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblUsuarioApellido = new System.Windows.Forms.Label();
+            this.txtUsuarioApellido = new System.Windows.Forms.TextBox();
+            this.lblUsuarioUser = new System.Windows.Forms.Label();
+            this.txtUsuarioUser = new System.Windows.Forms.TextBox();
+            this.lblUsuarioPass = new System.Windows.Forms.Label();
+            this.txtUsuarioPass = new System.Windows.Forms.TextBox();
+            this.btnUsuarioGuardar = new System.Windows.Forms.Button();
+            this.btnUsuarioCancel = new System.Windows.Forms.Button();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.menuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -75,6 +90,8 @@
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // menuTop
@@ -268,6 +285,7 @@
             this.bunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton5.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton5.TextFont = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton5.Click += new System.EventHandler(this.bunifuFlatButton5_Click);
             // 
             // bunifuFlatButton4
             // 
@@ -452,67 +470,6 @@
             this.contenido.TabIndex = 3;
             this.contenido.Paint += new System.Windows.Forms.PaintEventHandler(this.contenido_Paint);
             // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.AnimationSideBarBack.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(-235, 64);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(219, 35);
-            this.bunifuSeparator1.TabIndex = 0;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // CurvaSidebar
-            // 
-            this.CurvaSidebar.ElipseRadius = 9;
-            this.CurvaSidebar.TargetControl = this.bunifuGradientPanel1;
-            // 
-            // AnimationSidebar
-            // 
-            this.AnimationSidebar.AnimationType = BunifuAnimatorNS.AnimationType.Scale;
-            this.AnimationSidebar.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.AnimationSidebar.DefaultAnimation = animation1;
-            // 
-            // AnimationSideBarBack
-            // 
-            this.AnimationSideBarBack.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
-            this.AnimationSideBarBack.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.AnimationSideBarBack.DefaultAnimation = animation2;
-            // 
             // tabControl1
             // 
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
@@ -582,6 +539,9 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.tabPage5.Controls.Add(this.btnEliminar);
+            this.tabPage5.Controls.Add(this.dgvUsuarios);
+            this.tabPage5.Controls.Add(this.panel2);
             this.tabPage5.Controls.Add(this.panel1);
             this.AnimationSideBarBack.SetDecoration(this.tabPage5, BunifuAnimatorNS.DecorationType.None);
             this.AnimationSidebar.SetDecoration(this.tabPage5, BunifuAnimatorNS.DecorationType.None);
@@ -591,19 +551,6 @@
             this.tabPage5.Size = new System.Drawing.Size(1042, 621);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.AnimationSideBarBack.SetDecoration(this.tabPage6, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.tabPage6, BunifuAnimatorNS.DecorationType.None);
-            this.tabPage6.Location = new System.Drawing.Point(4, 4);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1042, 621);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "tabPage6";
             // 
             // panel1
             // 
@@ -629,6 +576,262 @@
             this.label1.Size = new System.Drawing.Size(161, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "USUARIOS";
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.AnimationSideBarBack.SetDecoration(this.tabPage6, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSidebar.SetDecoration(this.tabPage6, BunifuAnimatorNS.DecorationType.None);
+            this.tabPage6.Location = new System.Drawing.Point(4, 4);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(0);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1042, 621);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "tabPage6";
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.AnimationSideBarBack.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSidebar.SetDecoration(this.bunifuSeparator1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(-235, 64);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(219, 35);
+            this.bunifuSeparator1.TabIndex = 0;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // CurvaSidebar
+            // 
+            this.CurvaSidebar.ElipseRadius = 9;
+            this.CurvaSidebar.TargetControl = this.bunifuGradientPanel1;
+            // 
+            // AnimationSidebar
+            // 
+            this.AnimationSidebar.AnimationType = BunifuAnimatorNS.AnimationType.Scale;
+            this.AnimationSidebar.Cursor = null;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.AnimationSidebar.DefaultAnimation = animation3;
+            // 
+            // AnimationSideBarBack
+            // 
+            this.AnimationSideBarBack.AnimationType = BunifuAnimatorNS.AnimationType.HorizSlide;
+            this.AnimationSideBarBack.Cursor = null;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.AnimationSideBarBack.DefaultAnimation = animation4;
+            // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.AnimationSidebar.SetDecoration(this.lblNombreUsuario, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.lblNombreUsuario, BunifuAnimatorNS.DecorationType.None);
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUsuario.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(31, 25);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(63, 19);
+            this.lblNombreUsuario.TabIndex = 1;
+            this.lblNombreUsuario.Text = "Nombre:";
+            // 
+            // txtUsuarioNombre
+            // 
+            this.AnimationSidebar.SetDecoration(this.txtUsuarioNombre, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.txtUsuarioNombre, BunifuAnimatorNS.DecorationType.None);
+            this.txtUsuarioNombre.Location = new System.Drawing.Point(35, 63);
+            this.txtUsuarioNombre.Name = "txtUsuarioNombre";
+            this.txtUsuarioNombre.Size = new System.Drawing.Size(194, 20);
+            this.txtUsuarioNombre.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnUsuarioCancel);
+            this.panel2.Controls.Add(this.btnUsuarioGuardar);
+            this.panel2.Controls.Add(this.lblUsuarioPass);
+            this.panel2.Controls.Add(this.txtUsuarioPass);
+            this.panel2.Controls.Add(this.lblUsuarioUser);
+            this.panel2.Controls.Add(this.txtUsuarioUser);
+            this.panel2.Controls.Add(this.lblUsuarioApellido);
+            this.panel2.Controls.Add(this.txtUsuarioApellido);
+            this.panel2.Controls.Add(this.lblNombreUsuario);
+            this.panel2.Controls.Add(this.txtUsuarioNombre);
+            this.AnimationSideBarBack.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSidebar.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(3, 69);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(264, 549);
+            this.panel2.TabIndex = 3;
+            // 
+            // lblUsuarioApellido
+            // 
+            this.lblUsuarioApellido.AutoSize = true;
+            this.AnimationSidebar.SetDecoration(this.lblUsuarioApellido, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.lblUsuarioApellido, BunifuAnimatorNS.DecorationType.None);
+            this.lblUsuarioApellido.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioApellido.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.lblUsuarioApellido.Location = new System.Drawing.Point(31, 92);
+            this.lblUsuarioApellido.Name = "lblUsuarioApellido";
+            this.lblUsuarioApellido.Size = new System.Drawing.Size(69, 19);
+            this.lblUsuarioApellido.TabIndex = 4;
+            this.lblUsuarioApellido.Text = "Apellidos:";
+            // 
+            // txtUsuarioApellido
+            // 
+            this.AnimationSidebar.SetDecoration(this.txtUsuarioApellido, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.txtUsuarioApellido, BunifuAnimatorNS.DecorationType.None);
+            this.txtUsuarioApellido.Location = new System.Drawing.Point(35, 130);
+            this.txtUsuarioApellido.Name = "txtUsuarioApellido";
+            this.txtUsuarioApellido.Size = new System.Drawing.Size(194, 20);
+            this.txtUsuarioApellido.TabIndex = 5;
+            // 
+            // lblUsuarioUser
+            // 
+            this.lblUsuarioUser.AutoSize = true;
+            this.AnimationSidebar.SetDecoration(this.lblUsuarioUser, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.lblUsuarioUser, BunifuAnimatorNS.DecorationType.None);
+            this.lblUsuarioUser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioUser.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.lblUsuarioUser.Location = new System.Drawing.Point(31, 162);
+            this.lblUsuarioUser.Name = "lblUsuarioUser";
+            this.lblUsuarioUser.Size = new System.Drawing.Size(59, 19);
+            this.lblUsuarioUser.TabIndex = 4;
+            this.lblUsuarioUser.Text = "Usuario:";
+            // 
+            // txtUsuarioUser
+            // 
+            this.AnimationSidebar.SetDecoration(this.txtUsuarioUser, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.txtUsuarioUser, BunifuAnimatorNS.DecorationType.None);
+            this.txtUsuarioUser.Location = new System.Drawing.Point(35, 200);
+            this.txtUsuarioUser.Name = "txtUsuarioUser";
+            this.txtUsuarioUser.Size = new System.Drawing.Size(194, 20);
+            this.txtUsuarioUser.TabIndex = 5;
+            // 
+            // lblUsuarioPass
+            // 
+            this.lblUsuarioPass.AutoSize = true;
+            this.AnimationSidebar.SetDecoration(this.lblUsuarioPass, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.lblUsuarioPass, BunifuAnimatorNS.DecorationType.None);
+            this.lblUsuarioPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarioPass.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.lblUsuarioPass.Location = new System.Drawing.Point(31, 234);
+            this.lblUsuarioPass.Name = "lblUsuarioPass";
+            this.lblUsuarioPass.Size = new System.Drawing.Size(81, 19);
+            this.lblUsuarioPass.TabIndex = 4;
+            this.lblUsuarioPass.Text = "Contraseña:";
+            // 
+            // txtUsuarioPass
+            // 
+            this.AnimationSidebar.SetDecoration(this.txtUsuarioPass, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.txtUsuarioPass, BunifuAnimatorNS.DecorationType.None);
+            this.txtUsuarioPass.Location = new System.Drawing.Point(35, 272);
+            this.txtUsuarioPass.Name = "txtUsuarioPass";
+            this.txtUsuarioPass.Size = new System.Drawing.Size(194, 20);
+            this.txtUsuarioPass.TabIndex = 5;
+            // 
+            // btnUsuarioGuardar
+            // 
+            this.AnimationSidebar.SetDecoration(this.btnUsuarioGuardar, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.btnUsuarioGuardar, BunifuAnimatorNS.DecorationType.None);
+            this.btnUsuarioGuardar.Location = new System.Drawing.Point(35, 335);
+            this.btnUsuarioGuardar.Name = "btnUsuarioGuardar";
+            this.btnUsuarioGuardar.Size = new System.Drawing.Size(88, 40);
+            this.btnUsuarioGuardar.TabIndex = 6;
+            this.btnUsuarioGuardar.Text = "Guardar";
+            this.btnUsuarioGuardar.UseVisualStyleBackColor = true;
+            this.btnUsuarioGuardar.Click += new System.EventHandler(this.btnUsuarioGuardar_Click);
+            // 
+            // btnUsuarioCancel
+            // 
+            this.AnimationSidebar.SetDecoration(this.btnUsuarioCancel, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.btnUsuarioCancel, BunifuAnimatorNS.DecorationType.None);
+            this.btnUsuarioCancel.Location = new System.Drawing.Point(141, 335);
+            this.btnUsuarioCancel.Name = "btnUsuarioCancel";
+            this.btnUsuarioCancel.Size = new System.Drawing.Size(88, 40);
+            this.btnUsuarioCancel.TabIndex = 7;
+            this.btnUsuarioCancel.Text = "Cancelar";
+            this.btnUsuarioCancel.UseVisualStyleBackColor = true;
+            // 
+            // dgvUsuarios
+            // 
+            this.dgvUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvUsuarios.ColumnHeadersHeight = 27;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.AnimationSideBarBack.SetDecoration(this.dgvUsuarios, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSidebar.SetDecoration(this.dgvUsuarios, BunifuAnimatorNS.DecorationType.None);
+            this.dgvUsuarios.EnableHeadersVisualStyles = false;
+            this.dgvUsuarios.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvUsuarios.Location = new System.Drawing.Point(273, 94);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvUsuarios.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios.Size = new System.Drawing.Size(763, 350);
+            this.dgvUsuarios.TabIndex = 4;
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnimationSidebar.SetDecoration(this.btnEliminar, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.btnEliminar, BunifuAnimatorNS.DecorationType.None);
+            this.btnEliminar.Location = new System.Drawing.Point(948, 450);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(88, 40);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Form1
             // 
@@ -658,6 +861,9 @@
             this.tabPage5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -694,6 +900,19 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblUsuarioPass;
+        private System.Windows.Forms.TextBox txtUsuarioPass;
+        private System.Windows.Forms.Label lblUsuarioUser;
+        private System.Windows.Forms.TextBox txtUsuarioUser;
+        private System.Windows.Forms.Label lblUsuarioApellido;
+        private System.Windows.Forms.TextBox txtUsuarioApellido;
+        private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.TextBox txtUsuarioNombre;
+        private System.Windows.Forms.Button btnUsuarioCancel;
+        private System.Windows.Forms.Button btnUsuarioGuardar;
+        private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PuntodeVentaEstetica.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,58 @@ namespace PuntodeVentaEstetica
 {
     public partial class Form1 : Form
     {
+        private int idusuarioeliminar = -1;
+        private object[] textBoxObject, labelsObject;
         public Form1()
         {
             InitializeComponent();
+            object[] textBoxObject = {
+                txtUsuarioNombre, txtUsuarioApellido, txtUsuarioUser, txtUsuarioPass
+            };
+            object[] labelsObject = {
+                lblNombreUsuario, lblUsuarioApellido, lblUsuarioUser, lblUsuarioPass
+            };
+
+            this.textBoxObject = textBoxObject;
+            this.labelsObject = labelsObject;
         }
+
+        //Metodos para la parte de usuarios ####################################
+        #region
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 4;
+            var usuario = new Usuario(textBoxObject, labelsObject, dgvUsuarios);
+            usuario.restablecerUsuarios();
+        }
+        private void btnUsuarioGuardar_Click(object sender, EventArgs e)
+        {
+            var usuario = new Usuario(textBoxObject, labelsObject, dgvUsuarios);
+
+            if (usuario.registrarUsuario())
+            {
+                usuario.restablecerUsuarios();
+            }
+        }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvUsuarios.Rows.Count != 0)
+            {
+                var usuario = new Usuario(textBoxObject, labelsObject, dgvUsuarios);
+                usuario.dataGridViewUsuarios();
+                idusuarioeliminar = Convert.ToInt16(dgvUsuarios.CurrentRow.Cells[0].Value);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var usuario = new Usuario(textBoxObject, labelsObject, dgvUsuarios);
+            usuario.eliminarUsuario(idusuarioeliminar);
+            usuario.restablecerUsuarios();
+        }
+        #endregion
 
         //Metodos para la animacion del SideBar ###################################
         #region
@@ -68,6 +117,7 @@ namespace PuntodeVentaEstetica
         {
 
         }
+
         private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
