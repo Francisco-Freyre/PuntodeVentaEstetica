@@ -13,6 +13,10 @@ namespace PuntodeVentaEstetica.Connection
     {
         public Conexion() : base("Estetica") { }
 
-        public ITable<usuarios> usuarios { get { return GetTable<usuarios>(); } } 
+        public ITable<usuarios> usuarios { get { return GetTable<usuarios>(); } }
+
+        public ITable<categorias> categorias { get { return GetTable<categorias>(); } }
+
+        public ITable<productos> productos { get { return GetTable<productos>(); } }
     }
 }

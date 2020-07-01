@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
             BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuTop = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
@@ -51,32 +49,10 @@
             this.lineaSideBar = new Bunifu.Framework.UI.BunifuSeparator();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contenido = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.CurvaSidebar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.AnimationSidebar = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.AnimationSideBarBack = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.txtUsuarioNombre = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblUsuarioApellido = new System.Windows.Forms.Label();
-            this.txtUsuarioApellido = new System.Windows.Forms.TextBox();
-            this.lblUsuarioUser = new System.Windows.Forms.Label();
-            this.txtUsuarioUser = new System.Windows.Forms.TextBox();
-            this.lblUsuarioPass = new System.Windows.Forms.Label();
-            this.txtUsuarioPass = new System.Windows.Forms.TextBox();
-            this.btnUsuarioGuardar = new System.Windows.Forms.Button();
-            this.btnUsuarioCancel = new System.Windows.Forms.Button();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.menuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -87,11 +63,6 @@
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contenido.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // menuTop
@@ -322,6 +293,7 @@
             this.bunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton4.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton4.TextFont = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton4.Click += new System.EventHandler(this.bunifuFlatButton4_Click);
             // 
             // bunifuFlatButton3
             // 
@@ -459,7 +431,6 @@
             // contenido
             // 
             this.contenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.contenido.Controls.Add(this.tabControl1);
             this.contenido.Controls.Add(this.bunifuSeparator1);
             this.AnimationSideBarBack.SetDecoration(this.contenido, BunifuAnimatorNS.DecorationType.None);
             this.AnimationSidebar.SetDecoration(this.contenido, BunifuAnimatorNS.DecorationType.None);
@@ -469,126 +440,6 @@
             this.contenido.Size = new System.Drawing.Size(1050, 647);
             this.contenido.TabIndex = 3;
             this.contenido.Paint += new System.Windows.Forms.PaintEventHandler(this.contenido_Paint);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.AnimationSideBarBack.SetDecoration(this.tabControl1, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.tabControl1, BunifuAnimatorNS.DecorationType.None);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1050, 647);
-            this.tabControl1.TabIndex = 1;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.AnimationSideBarBack.SetDecoration(this.tabPage1, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.tabPage1, BunifuAnimatorNS.DecorationType.None);
-            this.tabPage1.Location = new System.Drawing.Point(4, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1042, 621);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.AnimationSideBarBack.SetDecoration(this.tabPage2, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.tabPage2, BunifuAnimatorNS.DecorationType.None);
-            this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1042, 621);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.AnimationSideBarBack.SetDecoration(this.tabPage3, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.tabPage3, BunifuAnimatorNS.DecorationType.None);
-            this.tabPage3.Location = new System.Drawing.Point(4, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1042, 621);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.AnimationSideBarBack.SetDecoration(this.tabPage4, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.tabPage4, BunifuAnimatorNS.DecorationType.None);
-            this.tabPage4.Location = new System.Drawing.Point(4, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1042, 621);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.tabPage5.Controls.Add(this.btnEliminar);
-            this.tabPage5.Controls.Add(this.dgvUsuarios);
-            this.tabPage5.Controls.Add(this.panel2);
-            this.tabPage5.Controls.Add(this.panel1);
-            this.AnimationSideBarBack.SetDecoration(this.tabPage5, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.tabPage5, BunifuAnimatorNS.DecorationType.None);
-            this.tabPage5.Location = new System.Drawing.Point(4, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1042, 621);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
-            this.panel1.Controls.Add(this.label1);
-            this.AnimationSideBarBack.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1036, 66);
-            this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.AnimationSidebar.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
-            this.label1.Font = new System.Drawing.Font("Bookman Old Style", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(478, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "USUARIOS";
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.AnimationSideBarBack.SetDecoration(this.tabPage6, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.tabPage6, BunifuAnimatorNS.DecorationType.None);
-            this.tabPage6.Location = new System.Drawing.Point(4, 4);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1042, 621);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "tabPage6";
             // 
             // bunifuSeparator1
             // 
@@ -651,188 +502,6 @@
             animation4.TransparencyCoeff = 0F;
             this.AnimationSideBarBack.DefaultAnimation = animation4;
             // 
-            // lblNombreUsuario
-            // 
-            this.lblNombreUsuario.AutoSize = true;
-            this.AnimationSidebar.SetDecoration(this.lblNombreUsuario, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.lblNombreUsuario, BunifuAnimatorNS.DecorationType.None);
-            this.lblNombreUsuario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsuario.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(31, 25);
-            this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(63, 19);
-            this.lblNombreUsuario.TabIndex = 1;
-            this.lblNombreUsuario.Text = "Nombre:";
-            // 
-            // txtUsuarioNombre
-            // 
-            this.AnimationSidebar.SetDecoration(this.txtUsuarioNombre, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.txtUsuarioNombre, BunifuAnimatorNS.DecorationType.None);
-            this.txtUsuarioNombre.Location = new System.Drawing.Point(35, 63);
-            this.txtUsuarioNombre.Name = "txtUsuarioNombre";
-            this.txtUsuarioNombre.Size = new System.Drawing.Size(194, 20);
-            this.txtUsuarioNombre.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnUsuarioCancel);
-            this.panel2.Controls.Add(this.btnUsuarioGuardar);
-            this.panel2.Controls.Add(this.lblUsuarioPass);
-            this.panel2.Controls.Add(this.txtUsuarioPass);
-            this.panel2.Controls.Add(this.lblUsuarioUser);
-            this.panel2.Controls.Add(this.txtUsuarioUser);
-            this.panel2.Controls.Add(this.lblUsuarioApellido);
-            this.panel2.Controls.Add(this.txtUsuarioApellido);
-            this.panel2.Controls.Add(this.lblNombreUsuario);
-            this.panel2.Controls.Add(this.txtUsuarioNombre);
-            this.AnimationSideBarBack.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(3, 69);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(264, 549);
-            this.panel2.TabIndex = 3;
-            // 
-            // lblUsuarioApellido
-            // 
-            this.lblUsuarioApellido.AutoSize = true;
-            this.AnimationSidebar.SetDecoration(this.lblUsuarioApellido, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.lblUsuarioApellido, BunifuAnimatorNS.DecorationType.None);
-            this.lblUsuarioApellido.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioApellido.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.lblUsuarioApellido.Location = new System.Drawing.Point(31, 92);
-            this.lblUsuarioApellido.Name = "lblUsuarioApellido";
-            this.lblUsuarioApellido.Size = new System.Drawing.Size(69, 19);
-            this.lblUsuarioApellido.TabIndex = 4;
-            this.lblUsuarioApellido.Text = "Apellidos:";
-            // 
-            // txtUsuarioApellido
-            // 
-            this.AnimationSidebar.SetDecoration(this.txtUsuarioApellido, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.txtUsuarioApellido, BunifuAnimatorNS.DecorationType.None);
-            this.txtUsuarioApellido.Location = new System.Drawing.Point(35, 130);
-            this.txtUsuarioApellido.Name = "txtUsuarioApellido";
-            this.txtUsuarioApellido.Size = new System.Drawing.Size(194, 20);
-            this.txtUsuarioApellido.TabIndex = 5;
-            // 
-            // lblUsuarioUser
-            // 
-            this.lblUsuarioUser.AutoSize = true;
-            this.AnimationSidebar.SetDecoration(this.lblUsuarioUser, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.lblUsuarioUser, BunifuAnimatorNS.DecorationType.None);
-            this.lblUsuarioUser.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioUser.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.lblUsuarioUser.Location = new System.Drawing.Point(31, 162);
-            this.lblUsuarioUser.Name = "lblUsuarioUser";
-            this.lblUsuarioUser.Size = new System.Drawing.Size(59, 19);
-            this.lblUsuarioUser.TabIndex = 4;
-            this.lblUsuarioUser.Text = "Usuario:";
-            // 
-            // txtUsuarioUser
-            // 
-            this.AnimationSidebar.SetDecoration(this.txtUsuarioUser, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.txtUsuarioUser, BunifuAnimatorNS.DecorationType.None);
-            this.txtUsuarioUser.Location = new System.Drawing.Point(35, 200);
-            this.txtUsuarioUser.Name = "txtUsuarioUser";
-            this.txtUsuarioUser.Size = new System.Drawing.Size(194, 20);
-            this.txtUsuarioUser.TabIndex = 5;
-            // 
-            // lblUsuarioPass
-            // 
-            this.lblUsuarioPass.AutoSize = true;
-            this.AnimationSidebar.SetDecoration(this.lblUsuarioPass, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.lblUsuarioPass, BunifuAnimatorNS.DecorationType.None);
-            this.lblUsuarioPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarioPass.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.lblUsuarioPass.Location = new System.Drawing.Point(31, 234);
-            this.lblUsuarioPass.Name = "lblUsuarioPass";
-            this.lblUsuarioPass.Size = new System.Drawing.Size(81, 19);
-            this.lblUsuarioPass.TabIndex = 4;
-            this.lblUsuarioPass.Text = "Contraseña:";
-            // 
-            // txtUsuarioPass
-            // 
-            this.AnimationSidebar.SetDecoration(this.txtUsuarioPass, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.txtUsuarioPass, BunifuAnimatorNS.DecorationType.None);
-            this.txtUsuarioPass.Location = new System.Drawing.Point(35, 272);
-            this.txtUsuarioPass.Name = "txtUsuarioPass";
-            this.txtUsuarioPass.Size = new System.Drawing.Size(194, 20);
-            this.txtUsuarioPass.TabIndex = 5;
-            // 
-            // btnUsuarioGuardar
-            // 
-            this.AnimationSidebar.SetDecoration(this.btnUsuarioGuardar, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.btnUsuarioGuardar, BunifuAnimatorNS.DecorationType.None);
-            this.btnUsuarioGuardar.Location = new System.Drawing.Point(35, 335);
-            this.btnUsuarioGuardar.Name = "btnUsuarioGuardar";
-            this.btnUsuarioGuardar.Size = new System.Drawing.Size(88, 40);
-            this.btnUsuarioGuardar.TabIndex = 6;
-            this.btnUsuarioGuardar.Text = "Guardar";
-            this.btnUsuarioGuardar.UseVisualStyleBackColor = true;
-            this.btnUsuarioGuardar.Click += new System.EventHandler(this.btnUsuarioGuardar_Click);
-            // 
-            // btnUsuarioCancel
-            // 
-            this.AnimationSidebar.SetDecoration(this.btnUsuarioCancel, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.btnUsuarioCancel, BunifuAnimatorNS.DecorationType.None);
-            this.btnUsuarioCancel.Location = new System.Drawing.Point(141, 335);
-            this.btnUsuarioCancel.Name = "btnUsuarioCancel";
-            this.btnUsuarioCancel.Size = new System.Drawing.Size(88, 40);
-            this.btnUsuarioCancel.TabIndex = 7;
-            this.btnUsuarioCancel.Text = "Cancelar";
-            this.btnUsuarioCancel.UseVisualStyleBackColor = true;
-            // 
-            // dgvUsuarios
-            // 
-            this.dgvUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvUsuarios.ColumnHeadersHeight = 27;
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.AnimationSideBarBack.SetDecoration(this.dgvUsuarios, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSidebar.SetDecoration(this.dgvUsuarios, BunifuAnimatorNS.DecorationType.None);
-            this.dgvUsuarios.EnableHeadersVisualStyles = false;
-            this.dgvUsuarios.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvUsuarios.Location = new System.Drawing.Point(273, 94);
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvUsuarios.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(763, 350);
-            this.dgvUsuarios.TabIndex = 4;
-            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AnimationSidebar.SetDecoration(this.btnEliminar, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.btnEliminar, BunifuAnimatorNS.DecorationType.None);
-            this.btnEliminar.Location = new System.Drawing.Point(948, 450);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(88, 40);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -857,13 +526,6 @@
             this.bunifuGradientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contenido.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -891,28 +553,6 @@
         private Bunifu.Framework.UI.BunifuElipse CurvaSidebar;
         private BunifuAnimatorNS.BunifuTransition AnimationSidebar;
         private BunifuAnimatorNS.BunifuTransition AnimationSideBarBack;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblUsuarioPass;
-        private System.Windows.Forms.TextBox txtUsuarioPass;
-        private System.Windows.Forms.Label lblUsuarioUser;
-        private System.Windows.Forms.TextBox txtUsuarioUser;
-        private System.Windows.Forms.Label lblUsuarioApellido;
-        private System.Windows.Forms.TextBox txtUsuarioApellido;
-        private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.TextBox txtUsuarioNombre;
-        private System.Windows.Forms.Button btnUsuarioCancel;
-        private System.Windows.Forms.Button btnUsuarioGuardar;
-        private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.Button btnEliminar;
     }
 }
 

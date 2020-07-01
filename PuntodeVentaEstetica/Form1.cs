@@ -15,54 +15,39 @@ namespace PuntodeVentaEstetica
     {
         private int idusuarioeliminar = -1;
         private object[] textBoxObject, labelsObject;
+        private Form formularioActivo = null;
         public Form1()
         {
             InitializeComponent();
-            object[] textBoxObject = {
-                txtUsuarioNombre, txtUsuarioApellido, txtUsuarioUser, txtUsuarioPass
-            };
-            object[] labelsObject = {
-                lblNombreUsuario, lblUsuarioApellido, lblUsuarioUser, lblUsuarioPass
-            };
-
-            this.textBoxObject = textBoxObject;
-            this.labelsObject = labelsObject;
         }
 
-        //Metodos para la parte de usuarios ####################################
+        private void abrirFormulario(Form formhijo)
+        {
+            if (formularioActivo != null)
+            {
+                formularioActivo.Close();
+            }
+            formularioActivo = formhijo;
+            formhijo.TopLevel = false;
+            formhijo.FormBorderStyle = FormBorderStyle.None;
+            formhijo.Dock = DockStyle.Fill;
+            contenido.Controls.Add(formhijo);
+            contenido.Tag = formhijo;
+            formhijo.BringToFront();
+            formhijo.Show();
+        }
+
+        //Llmados a todos los formularios ##########################################
         #region
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 4;
-            var usuario = new Usuario(textBoxObject, labelsObject, dgvUsuarios);
-            usuario.restablecerUsuarios();
-        }
-        private void btnUsuarioGuardar_Click(object sender, EventArgs e)
-        {
-            var usuario = new Usuario(textBoxObject, labelsObject, dgvUsuarios);
-
-            if (usuario.registrarUsuario())
-            {
-                usuario.restablecerUsuarios();
-            }
+            abrirFormulario(new viewUsers());
         }
 
-        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
-            if (dgvUsuarios.Rows.Count != 0)
-            {
-                var usuario = new Usuario(textBoxObject, labelsObject, dgvUsuarios);
-                usuario.dataGridViewUsuarios();
-                idusuarioeliminar = Convert.ToInt16(dgvUsuarios.CurrentRow.Cells[0].Value);
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            var usuario = new Usuario(textBoxObject, labelsObject, dgvUsuarios);
-            usuario.eliminarUsuario(idusuarioeliminar);
-            usuario.restablecerUsuarios();
+            abrirFormulario(new viewProducts());
         }
         #endregion
 
