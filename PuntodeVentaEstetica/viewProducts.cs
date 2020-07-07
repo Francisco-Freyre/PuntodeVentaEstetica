@@ -184,6 +184,11 @@ namespace PuntodeVentaEstetica
             p.buscarProducto(dgvProductos, textBox1.Text);
         }
 
+        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
             p.borrarProducto(idProducto);

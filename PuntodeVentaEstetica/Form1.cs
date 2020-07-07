@@ -19,6 +19,7 @@ namespace PuntodeVentaEstetica
         public Form1()
         {
             InitializeComponent();
+            abrirFormulario(new viewEntry());
         }
 
         private void abrirFormulario(Form formhijo)
@@ -48,6 +49,16 @@ namespace PuntodeVentaEstetica
         private void bunifuFlatButton4_Click(object sender, EventArgs e)
         {
             abrirFormulario(new viewProducts());
+        }
+
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new viewCustomer());
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new viewEntry());
         }
         #endregion
 
