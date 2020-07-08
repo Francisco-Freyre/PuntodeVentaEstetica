@@ -49,7 +49,6 @@ namespace PuntodeVentaEstetica.Controller
                 query = usuarios.Where(p => p.nombre.StartsWith(campo) || p.apellido.StartsWith(campo) || p.usuario.StartsWith(campo));
             }
             dataGridView.DataSource = query.ToList();
-            dataGridView.Columns[0].Visible = false;
             dataGridView.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke;
             dataGridView.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke;
             dataGridView.Columns[4].Visible = false;

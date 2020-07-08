@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\Conexion.cs" />
+    <Compile Include="Controller\Asistencia.cs" />
     <Compile Include="Controller\Cliente.cs" />
     <Compile Include="Controller\Encriptar.cs" />
     <Compile Include="Controller\Producto.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\asistencias.cs" />
     <Compile Include="Model\categorias.cs" />
     <Compile Include="Model\clientes.cs" />
     <Compile Include="Model\productos.cs" />
