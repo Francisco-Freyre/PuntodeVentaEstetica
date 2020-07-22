@@ -15,7 +15,7 @@ namespace PuntodeVentaEstetica.Controller
         public void insertar(int idUsuario)
         {
             string fecha = DateTime.Now.ToString("dd/MMM/yyy") ;
-            string hora = DateTime.Now.ToString("hh:mm:ss");
+            string hora = DateTime.Now.ToString("HH:mm:ss");
             var usuario = usuarios.Where(u => u.idUsuario.Equals(idUsuario)).ToList();
             if(usuario.Count > 0)
             {
@@ -41,8 +41,8 @@ namespace PuntodeVentaEstetica.Controller
         {
             string fecha = DateTime.Now.ToString("dd/MMM/yyy");
             var query = asistencias.Where(a => a.fecha.Contains(fecha)).ToList();
-            dgv.DataSource = query;
-            dgv.Columns[0].Visible = false;
+                dgv.DataSource = query;
+                dgv.Columns[0].Visible = false;
         }
     }
 }

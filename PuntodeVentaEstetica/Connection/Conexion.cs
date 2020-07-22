@@ -22,5 +22,7 @@ namespace PuntodeVentaEstetica.Connection
         public ITable<clientes> clientes { get { return GetTable<clientes>(); } }
 
         public ITable<asistencias> asistencias { get { return GetTable<asistencias>(); } }
+
+        public ITable<citas> citas { get { return GetTable<citas>(); } }
     }
 }

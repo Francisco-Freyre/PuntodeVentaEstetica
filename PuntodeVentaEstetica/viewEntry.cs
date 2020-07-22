@@ -27,7 +27,7 @@ namespace PuntodeVentaEstetica
         private void eventoTimer(object ob, EventArgs evt)
         {
             DateTime hora = DateTime.Now;
-            lblHora.Text = hora.ToString("hh:mm:ss tt");
+            lblHora.Text = hora.ToString("HH:mm:ss");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
