@@ -15,14 +15,15 @@ namespace PuntodeVentaEstetica.Controller
     {
         public void buscarCitas(DataGridView dataGridView, string campo)
         {
+            string fecha = DateTime.Now.ToString("dd/MMM/yyy");
             List<citas> query;
             if (campo.Equals(""))
             {
-                query = citas.ToList();
+                query = citas.Where(c => c.fecha.Equals(fecha)).ToList();
             }
             else
             {
-                query = citas.Where(p => p.nombre.StartsWith(campo) || p.fecha.StartsWith(campo) || p.hora.StartsWith(campo)).ToList();
+                query = citas.Where(p => p.nombre.Contains(campo) || p.fecha.Contains(campo) || p.hora.Contains(campo)).ToList();
             }
             dataGridView.DataSource = query;
             dataGridView.Columns[0].Visible = false;
@@ -53,7 +54,7 @@ namespace PuntodeVentaEstetica.Controller
             }
         }
 
-        private void borrar(int id)
+        public void borrar(int id)
         {
             var valorProducto = citas.Where(p => p.idCita == id).ToList();
             if(valorProducto.Count > 0)
