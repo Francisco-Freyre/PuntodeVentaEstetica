@@ -65,6 +65,16 @@ namespace PuntodeVentaEstetica
         {
             abrirFormulario(new viewCitas());
         }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new viewSales());
+        }
+
+        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        {
+           // boton para el corte
+        }
         #endregion
 
         //Metodos para la animacion del SideBar ###################################
@@ -118,6 +128,8 @@ namespace PuntodeVentaEstetica
         {
 
         }
+
+        
 
         private void bunifuGradientPanel1_Paint(object sender, PaintEventArgs e)
         {
