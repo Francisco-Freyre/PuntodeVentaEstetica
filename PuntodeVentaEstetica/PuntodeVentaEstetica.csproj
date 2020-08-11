@@ -100,6 +100,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="collect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="collect.Designer.cs">
+      <DependentUpon>collect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connection\Conexion.cs" />
     <Compile Include="Controller\Asistencia.cs" />
     <Compile Include="Controller\Cita.cs" />
@@ -160,6 +166,9 @@
     <Compile Include="viewUsers.Designer.cs">
       <DependentUpon>viewUsers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="collect.resx">
+      <DependentUpon>collect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
