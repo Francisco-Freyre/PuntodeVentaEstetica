@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,18 +39,22 @@
             this.cbxTarjeta = new System.Windows.Forms.CheckBox();
             this.cbxHistorial = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCobrarImp = new System.Windows.Forms.Button();
-            this.btnCobrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCobrar = new System.Windows.Forms.Button();
+            this.btnCobrarImp = new System.Windows.Forms.Button();
             this.EsconderClientes = new System.Windows.Forms.Panel();
+            this.containerClient = new System.Windows.Forms.Panel();
+            this.dgvClient = new System.Windows.Forms.DataGridView();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPago = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblCambio = new System.Windows.Forms.Label();
-            this.dgv = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.EsconderClientes.SuspendLayout();
+            this.containerClient.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +124,7 @@
             this.cbxHistorial.TabIndex = 10;
             this.cbxHistorial.Text = "Historial";
             this.cbxHistorial.UseVisualStyleBackColor = true;
+            this.cbxHistorial.CheckedChanged += new System.EventHandler(this.cbxHistorial_CheckedChanged);
             // 
             // panel2
             // 
@@ -130,26 +137,6 @@
             this.panel2.Size = new System.Drawing.Size(200, 384);
             this.panel2.TabIndex = 11;
             // 
-            // btnCobrarImp
-            // 
-            this.btnCobrarImp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCobrarImp.Location = new System.Drawing.Point(0, 0);
-            this.btnCobrarImp.Name = "btnCobrarImp";
-            this.btnCobrarImp.Size = new System.Drawing.Size(200, 45);
-            this.btnCobrarImp.TabIndex = 0;
-            this.btnCobrarImp.Text = "Cobrar e imprimir";
-            this.btnCobrarImp.UseVisualStyleBackColor = true;
-            // 
-            // btnCobrar
-            // 
-            this.btnCobrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCobrar.Location = new System.Drawing.Point(0, 45);
-            this.btnCobrar.Name = "btnCobrar";
-            this.btnCobrar.Size = new System.Drawing.Size(200, 45);
-            this.btnCobrar.TabIndex = 1;
-            this.btnCobrar.Text = "Cobrar sin imprimir";
-            this.btnCobrar.UseVisualStyleBackColor = true;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -161,14 +148,114 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnCobrar
+            // 
+            this.btnCobrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCobrar.Location = new System.Drawing.Point(0, 45);
+            this.btnCobrar.Name = "btnCobrar";
+            this.btnCobrar.Size = new System.Drawing.Size(200, 45);
+            this.btnCobrar.TabIndex = 1;
+            this.btnCobrar.Text = "Cobrar sin imprimir";
+            this.btnCobrar.UseVisualStyleBackColor = true;
+            // 
+            // btnCobrarImp
+            // 
+            this.btnCobrarImp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCobrarImp.Location = new System.Drawing.Point(0, 0);
+            this.btnCobrarImp.Name = "btnCobrarImp";
+            this.btnCobrarImp.Size = new System.Drawing.Size(200, 45);
+            this.btnCobrarImp.TabIndex = 0;
+            this.btnCobrarImp.Text = "Cobrar e imprimir";
+            this.btnCobrarImp.UseVisualStyleBackColor = true;
+            this.btnCobrarImp.Click += new System.EventHandler(this.btnCobrarImp_Click);
+            // 
             // EsconderClientes
             // 
+            this.EsconderClientes.Controls.Add(this.containerClient);
             this.EsconderClientes.Controls.Add(this.dgv);
             this.EsconderClientes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.EsconderClientes.Location = new System.Drawing.Point(0, 314);
             this.EsconderClientes.Name = "EsconderClientes";
             this.EsconderClientes.Size = new System.Drawing.Size(600, 136);
             this.EsconderClientes.TabIndex = 12;
+            // 
+            // containerClient
+            // 
+            this.containerClient.Controls.Add(this.dgvClient);
+            this.containerClient.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.containerClient.Location = new System.Drawing.Point(0, 36);
+            this.containerClient.Name = "containerClient";
+            this.containerClient.Size = new System.Drawing.Size(600, 100);
+            this.containerClient.TabIndex = 23;
+            // 
+            // dgvClient
+            // 
+            this.dgvClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClient.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.dgvClient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvClient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvClient.ColumnHeadersHeight = 27;
+            this.dgvClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvClient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvClient.EnableHeadersVisualStyles = false;
+            this.dgvClient.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvClient.Location = new System.Drawing.Point(0, 0);
+            this.dgvClient.Name = "dgvClient";
+            this.dgvClient.ReadOnly = true;
+            this.dgvClient.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvClient.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvClient.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvClient.Size = new System.Drawing.Size(600, 100);
+            this.dgvClient.TabIndex = 22;
+            this.dgvClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClient_CellClick);
+            // 
+            // dgv
+            // 
+            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv.ColumnHeadersHeight = 27;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv.EnableHeadersVisualStyles = false;
+            this.dgv.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgv.Location = new System.Drawing.Point(0, 0);
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv.RowHeadersVisible = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(600, 136);
+            this.dgv.TabIndex = 22;
             // 
             // label4
             // 
@@ -211,40 +298,6 @@
             this.lblCambio.TabIndex = 16;
             this.lblCambio.Text = "0.00";
             // 
-            // dgv
-            // 
-            this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv.ColumnHeadersHeight = 27;
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv.EnableHeadersVisualStyles = false;
-            this.dgv.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgv.Location = new System.Drawing.Point(0, 0);
-            this.dgv.Name = "dgv";
-            this.dgv.ReadOnly = true;
-            this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(600, 136);
-            this.dgv.TabIndex = 22;
-            // 
             // collect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,6 +322,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.EsconderClientes.ResumeLayout(false);
+            this.containerClient.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -293,5 +348,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblCambio;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.Panel containerClient;
+        private System.Windows.Forms.DataGridView dgvClient;
     }
 }

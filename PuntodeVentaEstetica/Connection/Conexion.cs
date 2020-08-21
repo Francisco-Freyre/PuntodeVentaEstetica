@@ -26,5 +26,13 @@ namespace PuntodeVentaEstetica.Connection
         public ITable<citas> citas { get { return GetTable<citas>(); } }
 
         public ITable<tempoVentas> tempoVentas { get { return GetTable<tempoVentas>(); } }
+
+        public ITable<ventas> Ventas { get { return GetTable<ventas>(); } }
+
+        public ITable<ventasTarjeta> ventasTarjeta { get { return GetTable<ventasTarjeta>(); } }
+
+        public ITable<ventasClientes> ventasClientes { get { return GetTable<ventasClientes>(); } }
+
+        public ITable<ingresos> ingresos { get { return GetTable<ingresos>(); } }
     }
 }

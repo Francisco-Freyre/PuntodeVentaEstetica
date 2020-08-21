@@ -102,5 +102,188 @@ namespace PuntodeVentaEstetica.Controller
                 label.Text = "$0.00";
             }
         }
+
+        public void cobrar(CheckBox checkBoxHistorial, CheckBox checkBoxTarjeta , TextBox textBox_pagos, Label label, int venta, int idCliente)
+        {
+            var ultimoTicket = Ventas.OrderByDescending(v => v.numeroTicket).ToList();
+            int ultimo = ultimoTicket[0].numeroTicket;
+            if (textBox_pagos.Text == "")
+            {
+                label.Text = "Ingrese el pago";
+                label.ForeColor = Color.Red;
+                textBox_pagos.Focus();
+            }
+            else
+            {
+                String saldoActual, IDCliente = null;
+                Decimal pagos, ingresosInicial;
+                //pagos = Convert.ToDecimal(textBox_pagos.Text);
+                if (checkBoxHistorial.Checked == false && checkBoxTarjeta.Checked == false)
+                {
+                    var ventaTempo = tempoVentas.Where(t => t.venta.Equals(venta)).ToList();
+                    ultimo++;
+                    if (ventaTempo.Count > 0)
+                    {
+                        ventaTempo.ForEach(item =>
+                        {
+                            Ventas.Value(v => v.numeroTicket, ultimo)
+                                    .Value(v => v.codigo, item.codigo)
+                                    .Value(v => v.descripcion, item.descripcion)
+                                    .Value(v => v.precio, item.precio)
+                                    .Value(v => v.cantidad, item.cantidad)
+                                    .Value(v => v.importe, item.importe)
+                                    .Value(v => v.costo, item.costo)
+                                    .Value(v => v.categoria, item.categoria)
+                                    .Value(v => v.fecha, fecha)
+                                    .Value(v => v.hora, DateTime.Now.ToString("hh:mm:ss"))
+                                    .Insert();
+                        });
+                    }
+                }
+                else
+                {
+                    if (checkBoxHistorial.Checked == true && checkBoxTarjeta.Checked == true)
+                    {
+                        var ventaTempo = tempoVentas.Where(t => t.venta.Equals(venta)).ToList();
+                        ultimo++;
+                        if (ventaTempo.Count > 0)
+                        {
+                            ventaTempo.ForEach(item =>
+                            {
+                                ventasTarjeta.Value(v => v.numeroTicket, ultimo)
+                                        .Value(v => v.codigo, item.codigo)
+                                        .Value(v => v.descripcion, item.descripcion)
+                                        .Value(v => v.precio, item.precio)
+                                        .Value(v => v.cantidad, item.cantidad)
+                                        .Value(v => v.importe, item.importe)
+                                        .Value(v => v.costo, item.costo)
+                                        .Value(v => v.categoria, item.categoria)
+                                        .Value(v => v.fecha, fecha)
+                                        .Value(v => v.hora, DateTime.Now.ToString("hh:mm:ss"))
+                                        .Insert();
+                                ventasClientes.Value(v => v.idCliente, idCliente)
+                                                .Value(v => v.codigo, item.codigo)
+                                                .Value(v => v.descripcion, item.descripcion)
+                                                .Value(v => v.precio, item.precio)
+                                                .Value(v => v.cantidad, item.cantidad)
+                                                .Value(v => v.importe, item.importe)
+                                                .Value(v => v.costo, item.costo)
+                                                .Value(v => v.categoria, item.categoria)
+                                                .Value(v => v.fecha, fecha)
+                                                .Value(v => v.hora, DateTime.Now.ToString("hh:mm:ss"))
+                                                .Insert();
+                            });
+                        }
+                    }
+                    else
+                    {
+                        if (checkBoxHistorial.Checked)
+                        {
+                            var ventaTempo = tempoVentas.Where(t => t.venta.Equals(venta)).ToList();
+                            ultimo++;
+                            if (ventaTempo.Count > 0)
+                            {
+                                ventaTempo.ForEach(item =>
+                                {
+                                    Ventas.Value(v => v.numeroTicket, ultimo)
+                                            .Value(v => v.codigo, item.codigo)
+                                            .Value(v => v.descripcion, item.descripcion)
+                                            .Value(v => v.precio, item.precio)
+                                            .Value(v => v.cantidad, item.cantidad)
+                                            .Value(v => v.importe, item.importe)
+                                            .Value(v => v.costo, item.costo)
+                                            .Value(v => v.categoria, item.categoria)
+                                            .Value(v => v.fecha, fecha)
+                                            .Value(v => v.hora, DateTime.Now.ToString("hh:mm:ss"))
+                                            .Insert();
+                                    ventasClientes.Value(v => v.idCliente, idCliente)
+                                                    .Value(v => v.codigo, item.codigo)
+                                                    .Value(v => v.descripcion, item.descripcion)
+                                                    .Value(v => v.precio, item.precio)
+                                                    .Value(v => v.cantidad, item.cantidad)
+                                                    .Value(v => v.importe, item.importe)
+                                                    .Value(v => v.costo, item.costo)
+                                                    .Value(v => v.categoria, item.categoria)
+                                                    .Value(v => v.fecha, fecha)
+                                                    .Value(v => v.hora, DateTime.Now.ToString("hh:mm:ss"))
+                                                    .Insert();
+                                });
+                            }
+                        }
+                        else
+                        {
+                            if (checkBoxTarjeta.Checked)
+                            {
+                                var ventaTempo = tempoVentas.Where(t => t.venta.Equals(venta)).ToList();
+                                ultimo++;
+                                if (ventaTempo.Count > 0)
+                                {
+                                    ventaTempo.ForEach(item =>
+                                    {
+                                        ventasTarjeta.Value(v => v.numeroTicket, ultimo)
+                                                .Value(v => v.codigo, item.codigo)
+                                                .Value(v => v.descripcion, item.descripcion)
+                                                .Value(v => v.precio, item.precio)
+                                                .Value(v => v.cantidad, item.cantidad)
+                                                .Value(v => v.importe, item.importe)
+                                                .Value(v => v.costo, item.costo)
+                                                .Value(v => v.categoria, item.categoria)
+                                                .Value(v => v.fecha, fecha)
+                                                .Value(v => v.hora, DateTime.Now.ToString("hh:mm:ss"))
+                                                .Insert();
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        public bool pagosCliente(TextBox textBox, Label label1, Label label2, Label label3)
+        {
+            bool valor = false;
+            Decimal pago, pagar;
+            if (textBox.Text == "")
+            {
+                label1.Text = "Su cambio";
+                label2.Text = "$0.00";
+                valor = false;
+            }
+            else
+            {
+                pagar = importe;
+                pago = Convert.ToDecimal(textBox.Text);
+                if (pago >= pagar)
+                {
+                    totalPagar = pago - pagar;
+                    if (totalPagar > ingresosTotales)
+                    {
+                        label1.Text = "No hay ingresos en caja";
+                        label1.ForeColor = Color.Red;
+                        valor = false;
+                    }
+                    else
+                    {
+                        label1.Text = "Su cambio";
+                        label1.ForeColor = Color.Green;
+                        totalPagar = pago - pagar;
+                        valor = true;
+                    }
+                }
+                if (pago < pagar)
+                {
+                    label1.Text = "Pago insuficiente";
+                    label1.ForeColor = Color.Red;
+                    totalPagar = pagar - pago;
+                    valor = false;
+                }
+                label2.Text = String.Format("${0:#,###,###,##0.00####}", totalPagar);
+            }
+            label3.Text = "Pago con";
+            label3.ForeColor = Color.Teal;
+            return valor;
+        }
     }
 }

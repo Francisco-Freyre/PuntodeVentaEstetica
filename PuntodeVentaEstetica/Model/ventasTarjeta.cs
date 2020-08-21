@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PuntodeVentaEstetica.Model
 {
-    class ventas
+    class ventasTarjeta
     {
         [PrimaryKey, Identity]
 

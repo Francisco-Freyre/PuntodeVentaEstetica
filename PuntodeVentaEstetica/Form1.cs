@@ -20,6 +20,8 @@ namespace PuntodeVentaEstetica
         {
             InitializeComponent();
             abrirFormulario(new viewEntry());
+            viewIngresos ing = new viewIngresos();
+            ing.Show();
         }
 
         private void abrirFormulario(Form formhijo)

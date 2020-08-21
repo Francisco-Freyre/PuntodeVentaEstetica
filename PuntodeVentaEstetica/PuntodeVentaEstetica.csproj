@@ -111,6 +111,7 @@
     <Compile Include="Controller\Cita.cs" />
     <Compile Include="Controller\Cliente.cs" />
     <Compile Include="Controller\Encriptar.cs" />
+    <Compile Include="Controller\Ingreso.cs" />
     <Compile Include="Controller\Producto.cs" />
     <Compile Include="Controller\Usuario.cs" />
     <Compile Include="Controller\Ventas.cs" />
@@ -124,10 +125,13 @@
     <Compile Include="Model\categorias.cs" />
     <Compile Include="Model\citas.cs" />
     <Compile Include="Model\clientes.cs" />
+    <Compile Include="Model\ingresos.cs" />
     <Compile Include="Model\productos.cs" />
     <Compile Include="Model\tempoVentas.cs" />
     <Compile Include="Model\usuarios.cs" />
     <Compile Include="Model\ventas.cs" />
+    <Compile Include="Model\ventasClientes.cs" />
+    <Compile Include="Model\ventasTarjeta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="viewCitas.cs">
@@ -147,6 +151,12 @@
     </Compile>
     <Compile Include="viewEntry.Designer.cs">
       <DependentUpon>viewEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewIngresos.Designer.cs">
+      <DependentUpon>viewIngresos.cs</DependentUpon>
     </Compile>
     <Compile Include="viewProducts.cs">
       <SubType>Form</SubType>
@@ -189,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewEntry.resx">
       <DependentUpon>viewEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewIngresos.resx">
+      <DependentUpon>viewIngresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewProducts.resx">
       <DependentUpon>viewProducts.cs</DependentUpon>

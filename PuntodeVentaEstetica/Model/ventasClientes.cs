@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace PuntodeVentaEstetica.Model
 {
-    class ventas
+    class ventasClientes
     {
         [PrimaryKey, Identity]
 
         public int idVenta { set; get; }
 
-        public int numeroTicket { set; get; }
+        public int idCliente { set; get; }
 
         public string codigo { set; get; }
 

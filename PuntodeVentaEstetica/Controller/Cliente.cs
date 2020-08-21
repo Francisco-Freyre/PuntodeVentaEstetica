@@ -55,6 +55,29 @@ namespace PuntodeVentaEstetica.Controller
             DataGridView.Columns[5].DefaultCellStyle.BackColor = Color.WhiteSmoke;
         }
 
+        public void buscarClienteDos(DataGridView DataGridView, string campo)
+        {
+            IEnumerable<clientes> query;
+            if (campo == "")
+            {
+                query = from c in clientes select c;
+            }
+            else
+            {
+                query = from c in clientes
+                        where c.nombre.Contains(campo) || c.apellido.Contains(campo)
+                        select c;
+            }
+            DataGridView.DataSource = query.ToList();
+            DataGridView.Columns[0].Visible = false;
+            DataGridView.Columns[1].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            DataGridView.Columns[3].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            DataGridView.Columns[5].DefaultCellStyle.BackColor = Color.WhiteSmoke;
+            DataGridView.Columns[3].Visible = false;
+            DataGridView.Columns[4].Visible = false;
+            DataGridView.Columns[5].Visible = false;
+        }
+
         public void updateCliente(string nombre, string apellido, string direccion, string telefono, string correo,
             int idCliente)
         {
