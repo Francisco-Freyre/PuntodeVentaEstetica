@@ -111,6 +111,7 @@
     <Compile Include="Controller\Cita.cs" />
     <Compile Include="Controller\Cliente.cs" />
     <Compile Include="Controller\Encriptar.cs" />
+    <Compile Include="Controller\Imprimir.cs" />
     <Compile Include="Controller\Ingreso.cs" />
     <Compile Include="Controller\Producto.cs" />
     <Compile Include="Controller\Usuario.cs" />

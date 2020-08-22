@@ -140,7 +140,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCancelar.Location = new System.Drawing.Point(0, 90);
+            this.btnCancelar.Location = new System.Drawing.Point(0, 91);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(200, 45);
             this.btnCancelar.TabIndex = 2;
@@ -151,7 +151,7 @@
             // btnCobrar
             // 
             this.btnCobrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCobrar.Location = new System.Drawing.Point(0, 45);
+            this.btnCobrar.Location = new System.Drawing.Point(0, 46);
             this.btnCobrar.Name = "btnCobrar";
             this.btnCobrar.Size = new System.Drawing.Size(200, 45);
             this.btnCobrar.TabIndex = 1;
@@ -163,7 +163,7 @@
             this.btnCobrarImp.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCobrarImp.Location = new System.Drawing.Point(0, 0);
             this.btnCobrarImp.Name = "btnCobrarImp";
-            this.btnCobrarImp.Size = new System.Drawing.Size(200, 45);
+            this.btnCobrarImp.Size = new System.Drawing.Size(200, 46);
             this.btnCobrarImp.TabIndex = 0;
             this.btnCobrarImp.Text = "Cobrar e imprimir";
             this.btnCobrarImp.UseVisualStyleBackColor = true;
@@ -275,6 +275,7 @@
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(128, 29);
             this.txtPago.TabIndex = 14;
+            this.txtPago.TextChanged += new System.EventHandler(this.txtPago_TextChanged);
             // 
             // label5
             // 

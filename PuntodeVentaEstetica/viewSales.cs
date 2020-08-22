@@ -14,6 +14,13 @@ namespace PuntodeVentaEstetica
     public partial class viewSales : Form
     {
         private Ventas venta = new Ventas();
+        private Cliente cliente = new Cliente();
+        private Imprimir imprimir = new Imprimir();
+        private bool valor;
+        private int idCliente = -1;
+        private GroupBox gb;
+        private DateTimePicker dtp;
+        private string tipo = "venta", usuario, pago, cambio;
         public viewSales()
         {
             InitializeComponent();
@@ -28,6 +35,10 @@ namespace PuntodeVentaEstetica
             tabControl1.TabPages.Remove(tabPage8);
             tabControl1.TabPages.Remove(tabPage9);
             tabControl1.TabPages.Remove(tabPage10);
+            cliente.buscarClienteDos(dgvClient, "");
+            panel2.Visible = false;
+            txtCodigo.Focus();
+
         }
 
         private void txtCodigo_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -518,10 +529,70 @@ namespace PuntodeVentaEstetica
             }
         }
 
-        private void btnCobrar_Click(object sender, EventArgs e)
+        private void btnCobrar_Click_1(object sender, EventArgs e)
         {
-            collect cobrar = new collect(lblTotal, tabControl1.SelectedIndex);
-            cobrar.Show();
+
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            imprimir.printDocument(e, gb, tipo, dtp, usuario, pago, cambio, tabControl1.SelectedIndex);
+        }
+
+        private void restablecer()
+        {
+            txtPago.Text = "";
+            txtCodigo.Text = "";
+            venta.buscarVentaTempo(dgv, tabControl1.SelectedIndex);
+            venta.importes(lblTotal, tabControl1.SelectedIndex);
+        }
+
+        //Venta 1 #####################################
+
+        private void txtPago_TextChanged(object sender, EventArgs e)
+        {
+            valor = venta.pagosCliente(txtPago, label7, lblCambio, label4, lblTotal);
+        }
+
+        private void cbxHistorial_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxHistorial.Checked)
+            {
+                panel2.Visible = true;
+            }
+            else
+            {
+                panel2.Visible = false;
+            }
+        }
+
+        private void btnCobrarImp_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial, cbxTarjeta, txtPago, lblCambio, tabControl1.SelectedIndex, idCliente);
+                gb = null;
+                dtp = null;
+                pago = txtPago.Text;
+                cambio = lblCambio.Text;
+                printDocument1.Print();
+                restablecer();
+            }
+        }
+
+        private void dgvClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvClient_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idCliente = Convert.ToInt16(dgvClient.CurrentRow.Cells[0].Value);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace PuntodeVentaEstetica.Controller
 {
     class Ventas : Conexion
     {
-        private Decimal importe = 0, totalPagar = 0m, ingresos, ingresosTotales;
+        private Decimal importe = 0, totalPagar = 0m;
         private string fecha = DateTime.Now.ToString("dd/MMM/yyy");
 
         public List<productos> buscarProductos(string codigo)
@@ -241,7 +241,7 @@ namespace PuntodeVentaEstetica.Controller
             }
         }
 
-        public bool pagosCliente(TextBox textBox, Label label1, Label label2, Label label3)
+        public bool pagosCliente(TextBox textBox, Label label1, Label label2, Label label3, Label label4)
         {
             bool valor = false;
             Decimal pago, pagar;
@@ -253,12 +253,15 @@ namespace PuntodeVentaEstetica.Controller
             }
             else
             {
+                importe = Convert.ToDecimal(label4.Text.Replace("$", ""));
+                var ingresosIni = ingresos.Where(i => i.fecha.Equals(fecha)).ToList();
+                decimal ingresostotales = Convert.ToDecimal(ingresosIni[0].ingresoInicial) + Convert.ToDecimal(ingresosIni[0].ingreso.Replace("$",""));
                 pagar = importe;
                 pago = Convert.ToDecimal(textBox.Text);
                 if (pago >= pagar)
                 {
                     totalPagar = pago - pagar;
-                    if (totalPagar > ingresosTotales)
+                    if (totalPagar > ingresostotales)
                     {
                         label1.Text = "No hay ingresos en caja";
                         label1.ForeColor = Color.Red;
