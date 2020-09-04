@@ -87,30 +87,39 @@ namespace PuntodeVentaEstetica
                 tabControl1.TabPages.Add(tabPage2);
                 venta.buscarVentaTempo(dgv2, 1);
                 venta.importes(lblTotal2, 1);
+                panel3.Visible = false;
+                cliente.buscarClienteDos(dgvCliente2, "");
             }
             else if (!tabControl1.Controls.Contains(tabPage3))
             {
                 tabControl1.TabPages.Add(tabPage3);
                 venta.buscarVentaTempo(dgv3, 2);
                 venta.importes(lblTotal3, 2);
+                panel4.Visible = false;
+                cliente.buscarClienteDos(dgvCliente3, "");
             }
             else if (!tabControl1.Controls.Contains(tabPage4))
             {
                 tabControl1.TabPages.Add(tabPage4);
                 venta.buscarVentaTempo(dgv4, 3);
                 venta.importes(lblTotal4, 3);
+                panel5.Visible = false;
+                cliente.buscarClienteDos(dgvCliente4, "");
             }
             else if (!tabControl1.Controls.Contains(tabPage5))
             {
                 tabControl1.TabPages.Add(tabPage5);
                 venta.buscarVentaTempo(dgv5, 4);
                 venta.importes(lblTotal5, 4);
+                panel6.Visible = false;
+                cliente.buscarClienteDos(dgvCliente5, "");
             }
             else if (!tabControl1.Controls.Contains(tabPage6))
             {
                 tabControl1.TabPages.Add(tabPage6);
                 venta.buscarVentaTempo(dgv6, 5);
                 venta.importes(lblTotal6, 5);
+                panel6.Visible = false;
             }
             else if (!tabControl1.Controls.Contains(tabPage7))
             {
@@ -175,162 +184,6 @@ namespace PuntodeVentaEstetica
             else if (tabControl1.Controls.Contains(tabPage2))
             {
                 tabControl1.TabPages.Remove(tabPage2);
-            }
-        }
-
-        private void txtVenta2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                if (txtVenta2.Text == "")
-                {
-                    label_MensajeVenta.Text = "Ingrese un codigo de barras";
-                    label_MensajeVenta.ForeColor = Color.Red;
-                }
-                else
-                {
-                    var producto = venta.buscarProductos(txtVenta2.Text);
-                    if (producto.Count > 0)
-                    {
-                        if (producto[0].existencia.Equals(0))
-                        {
-                            label_MensajeVenta.Text = "No hay productos en existencia";
-                            label_MensajeVenta.ForeColor = Color.Red;
-                        }
-                        else
-                        {
-                            label_MensajeVenta.Text = "";
-                            venta.guardarVentasTempo(txtVenta2.Text, 0, tabControl1.SelectedIndex);
-                            venta.buscarVentaTempo(dgv2, tabControl1.SelectedIndex);
-                            venta.importes(lblTotal2, tabControl1.SelectedIndex);
-                        }
-
-                    }
-                    else
-                    {
-                        label_MensajeVenta.Text = "No existe este producto ";
-                        label_MensajeVenta.ForeColor = Color.Red;
-                    }
-                }
-                txtVenta2.Text = "";
-                txtVenta2.Focus();
-            }
-        }
-
-        private void txtCodigo3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                if (txtCodigo3.Text == "")
-                {
-                    label_MensajeVenta.Text = "Ingrese un codigo de barras";
-                    label_MensajeVenta.ForeColor = Color.Red;
-                }
-                else
-                {
-                    var producto = venta.buscarProductos(txtCodigo3.Text);
-                    if (producto.Count > 0)
-                    {
-                        if (producto[0].existencia.Equals(0))
-                        {
-                            label_MensajeVenta.Text = "No hay productos en existencia";
-                            label_MensajeVenta.ForeColor = Color.Red;
-                        }
-                        else
-                        {
-                            label_MensajeVenta.Text = "";
-                            venta.guardarVentasTempo(txtCodigo3.Text, 0, tabControl1.SelectedIndex);
-                            venta.buscarVentaTempo(dgv3, tabControl1.SelectedIndex);
-                            venta.importes(lblTotal3, tabControl1.SelectedIndex);
-                        }
-
-                    }
-                    else
-                    {
-                        label_MensajeVenta.Text = "No existe este producto ";
-                        label_MensajeVenta.ForeColor = Color.Red;
-                    }
-                }
-                txtCodigo3.Text = "";
-                txtCodigo3.Focus();
-            }
-        }
-
-        private void txtCodigo4_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                if (txtCodigo4.Text == "")
-                {
-                    label_MensajeVenta.Text = "Ingrese un codigo de barras";
-                    label_MensajeVenta.ForeColor = Color.Red;
-                }
-                else
-                {
-                    var producto = venta.buscarProductos(txtCodigo4.Text);
-                    if (producto.Count > 0)
-                    {
-                        if (producto[0].existencia.Equals(0))
-                        {
-                            label_MensajeVenta.Text = "No hay productos en existencia";
-                            label_MensajeVenta.ForeColor = Color.Red;
-                        }
-                        else
-                        {
-                            label_MensajeVenta.Text = "";
-                            venta.guardarVentasTempo(txtCodigo4.Text, 0, tabControl1.SelectedIndex);
-                            venta.buscarVentaTempo(dgv4, tabControl1.SelectedIndex);
-                            venta.importes(lblTotal4, tabControl1.SelectedIndex);
-                        }
-
-                    }
-                    else
-                    {
-                        label_MensajeVenta.Text = "No existe este producto ";
-                        label_MensajeVenta.ForeColor = Color.Red;
-                    }
-                }
-                txtCodigo4.Text = "";
-                txtCodigo4.Focus();
-            }
-        }
-
-        private void txtCodigo5_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                if (txtCodigo5.Text == "")
-                {
-                    label_MensajeVenta.Text = "Ingrese un codigo de barras";
-                    label_MensajeVenta.ForeColor = Color.Red;
-                }
-                else
-                {
-                    var producto = venta.buscarProductos(txtCodigo5.Text);
-                    if (producto.Count > 0)
-                    {
-                        if (producto[0].existencia.Equals(0))
-                        {
-                            label_MensajeVenta.Text = "No hay productos en existencia";
-                            label_MensajeVenta.ForeColor = Color.Red;
-                        }
-                        else
-                        {
-                            label_MensajeVenta.Text = "";
-                            venta.guardarVentasTempo(txtCodigo5.Text, 0, tabControl1.SelectedIndex);
-                            venta.buscarVentaTempo(dgv5, tabControl1.SelectedIndex);
-                            venta.importes(lblTotal5, tabControl1.SelectedIndex);
-                        }
-
-                    }
-                    else
-                    {
-                        label_MensajeVenta.Text = "No existe este producto ";
-                        label_MensajeVenta.ForeColor = Color.Red;
-                    }
-                }
-                txtCodigo5.Text = "";
-                txtCodigo5.Focus();
             }
         }
 
@@ -546,14 +399,51 @@ namespace PuntodeVentaEstetica
 
         private void restablecer()
         {
+            valor = false;
             txtPago.Text = "";
             txtCodigo.Text = "";
             venta.buscarVentaTempo(dgv, tabControl1.SelectedIndex);
             venta.importes(lblTotal, tabControl1.SelectedIndex);
         }
 
-        //Venta 1 #####################################
+        private void restablecer2()
+        {
+            valor = false;
+            txtPago2.Text = "";
+            txtVenta2.Text = "";
+            venta.buscarVentaTempo(dgv2, tabControl1.SelectedIndex);
+            venta.importes(lblTotal2, tabControl1.SelectedIndex);
+        }
 
+        private void restablecer3()
+        {
+            valor = false;
+            txtPago3.Text = "";
+            txtCodigo3.Text = "";
+            venta.buscarVentaTempo(dgv3, tabControl1.SelectedIndex);
+            venta.importes(lblTotal3, tabControl1.SelectedIndex);
+        }
+
+        private void restablecer4()
+        {
+            valor = false;
+            txtPago4.Text = "";
+            txtCodigo4.Text = "";
+            venta.buscarVentaTempo(dgv4, tabControl1.SelectedIndex);
+            venta.importes(lblTotal4, tabControl1.SelectedIndex);
+        }
+
+        private void restablecer5()
+        {
+            valor = false;
+            txtPago5.Text = "";
+            txtCodigo5.Text = "";
+            venta.buscarVentaTempo(dgv5, tabControl1.SelectedIndex);
+            venta.importes(lblTotal5, tabControl1.SelectedIndex);
+        }
+
+        //Venta 1 #####################################
+        #region
         private void txtPago_TextChanged(object sender, EventArgs e)
         {
             valor = venta.pagosCliente(txtPago, label7, lblCambio, label4, lblTotal);
@@ -570,6 +460,7 @@ namespace PuntodeVentaEstetica
                 panel2.Visible = false;
             }
         }
+
 
         private void btnCobrarImp_Click(object sender, EventArgs e)
         {
@@ -594,5 +485,335 @@ namespace PuntodeVentaEstetica
         {
             idCliente = Convert.ToInt16(dgvClient.CurrentRow.Cells[0].Value);
         }
+
+
+        #endregion
+
+        // VENTA 2 ####################################
+        #region
+
+        private void txtVenta2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (txtVenta2.Text == "")
+                {
+                    label_MensajeVenta.Text = "Ingrese un codigo de barras";
+                    label_MensajeVenta.ForeColor = Color.Red;
+                }
+                else
+                {
+                    var producto = venta.buscarProductos(txtVenta2.Text);
+                    if (producto.Count > 0)
+                    {
+                        if (producto[0].existencia.Equals(0))
+                        {
+                            label_MensajeVenta.Text = "No hay productos en existencia";
+                            label_MensajeVenta.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            label_MensajeVenta.Text = "";
+                            venta.guardarVentasTempo(txtVenta2.Text, 0, tabControl1.SelectedIndex);
+                            venta.buscarVentaTempo(dgv2, tabControl1.SelectedIndex);
+                            venta.importes(lblTotal2, tabControl1.SelectedIndex);
+                        }
+
+                    }
+                    else
+                    {
+                        label_MensajeVenta.Text = "No existe este producto ";
+                        label_MensajeVenta.ForeColor = Color.Red;
+                    }
+                }
+                txtVenta2.Text = "";
+                txtVenta2.Focus();
+            }
+        }
+        private void txtVenta2_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtPago2_TextChanged(object sender, EventArgs e)
+        {
+            valor = venta.pagosCliente(txtPago2, lblSucambio2, lblCambio2, lblPagocon2, lblTotal2);
+        }
+
+        private void cbxHistorial2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxHistorial2.Checked)
+            {
+                panel3.Visible = true;
+            }
+            else
+            {
+                panel3.Visible = false;
+            }
+        }
+
+        private void dgvCliente2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idCliente = Convert.ToInt16(dgvCliente2.CurrentRow.Cells[0].Value);
+        }   
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial2, cbxTarjeta2, txtPago2, lblCambio2, tabControl1.SelectedIndex, idCliente);
+                gb = null;
+                dtp = null;
+                pago = txtPago2.Text;
+                cambio = lblCambio2.Text;
+                printDocument1.Print();
+                restablecer2();
+            }
+        }       
+
+        #endregion
+
+        //Venta 3 ###########################
+        #region
+        private void txtCodigo3_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txtCodigo3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (txtCodigo3.Text == "")
+                {
+                    label_MensajeVenta.Text = "Ingrese un codigo de barras";
+                    label_MensajeVenta.ForeColor = Color.Red;
+                }
+                else
+                {
+                    var producto = venta.buscarProductos(txtCodigo3.Text);
+                    if (producto.Count > 0)
+                    {
+                        if (producto[0].existencia.Equals(0))
+                        {
+                            label_MensajeVenta.Text = "No hay productos en existencia";
+                            label_MensajeVenta.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            label_MensajeVenta.Text = "";
+                            venta.guardarVentasTempo(txtCodigo3.Text, 0, tabControl1.SelectedIndex);
+                            venta.buscarVentaTempo(dgv3, tabControl1.SelectedIndex);
+                            venta.importes(lblTotal3, tabControl1.SelectedIndex);
+                        }
+
+                    }
+                    else
+                    {
+                        label_MensajeVenta.Text = "No existe este producto ";
+                        label_MensajeVenta.ForeColor = Color.Red;
+                    }
+                }
+                txtCodigo3.Text = "";
+                txtCodigo3.Focus();
+            }
+        }
+
+        private void txtPago3_TextChanged(object sender, EventArgs e)
+        {
+            valor = venta.pagosCliente(txtPago3, lblSucambio3, lblCambio3, lblPagocon3, lblTotal3);
+        }
+
+        private void cbxHistorial3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxHistorial3.Checked)
+            {
+                panel4.Visible = true;
+            }
+            else
+            {
+                panel4.Visible = false;
+            }
+        }
+
+        private void dgvCliente3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idCliente = Convert.ToInt16(dgvCliente3.CurrentRow.Cells[0].Value);
+        }
+
+        private void btnCobrarImp3_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial3, cbxTarjeta3, txtPago3, lblCambio3, tabControl1.SelectedIndex, idCliente);
+                gb = null;
+                dtp = null;
+                pago = txtPago3.Text;
+                cambio = lblCambio3.Text;
+                printDocument1.Print();
+                restablecer3();
+            }
+        }
+
+       
+
+        #endregion
+
+        //Venta 4 ############################
+        #region
+        private void txtCodigo4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (txtCodigo4.Text == "")
+                {
+                    label_MensajeVenta.Text = "Ingrese un codigo de barras";
+                    label_MensajeVenta.ForeColor = Color.Red;
+                }
+                else
+                {
+                    var producto = venta.buscarProductos(txtCodigo4.Text);
+                    if (producto.Count > 0)
+                    {
+                        if (producto[0].existencia.Equals(0))
+                        {
+                            label_MensajeVenta.Text = "No hay productos en existencia";
+                            label_MensajeVenta.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            label_MensajeVenta.Text = "";
+                            venta.guardarVentasTempo(txtCodigo4.Text, 0, tabControl1.SelectedIndex);
+                            venta.buscarVentaTempo(dgv4, tabControl1.SelectedIndex);
+                            venta.importes(lblTotal4, tabControl1.SelectedIndex);
+                        }
+
+                    }
+                    else
+                    {
+                        label_MensajeVenta.Text = "No existe este producto ";
+                        label_MensajeVenta.ForeColor = Color.Red;
+                    }
+                }
+                txtCodigo4.Text = "";
+                txtCodigo4.Focus();
+            }
+        }
+
+        private void cbxHistorial4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxHistorial4.Checked)
+            {
+                panel5.Visible = true;
+            }
+            else
+            {
+                panel5.Visible = false;
+            }
+        }
+
+        private void dgvCliente4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idCliente = Convert.ToInt16(dgvCliente4.CurrentRow.Cells[0].Value);
+        }
+
+        private void txtPago4_TextChanged(object sender, EventArgs e)
+        {
+            valor = venta.pagosCliente(txtPago4, lblSucambio4, lblCambio4, lblPagocon4, lblTotal4);
+        }
+
+        private void btnCobrarImp4_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial4, cbxTarjeta4, txtPago4, lblCambio4, tabControl1.SelectedIndex, idCliente);
+                gb = null;
+                dtp = null;
+                pago = txtPago4.Text;
+                cambio = lblCambio4.Text;
+                printDocument1.Print();
+                restablecer4();
+            }
+        }
+        #endregion
+
+        //Venta 5 ####################
+
+        #region
+        private void txtCodigo5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (txtCodigo5.Text == "")
+                {
+                    label_MensajeVenta.Text = "Ingrese un codigo de barras";
+                    label_MensajeVenta.ForeColor = Color.Red;
+                }
+                else
+                {
+                    var producto = venta.buscarProductos(txtCodigo5.Text);
+                    if (producto.Count > 0)
+                    {
+                        if (producto[0].existencia.Equals(0))
+                        {
+                            label_MensajeVenta.Text = "No hay productos en existencia";
+                            label_MensajeVenta.ForeColor = Color.Red;
+                        }
+                        else
+                        {
+                            label_MensajeVenta.Text = "";
+                            venta.guardarVentasTempo(txtCodigo5.Text, 0, tabControl1.SelectedIndex);
+                            venta.buscarVentaTempo(dgv5, tabControl1.SelectedIndex);
+                            venta.importes(lblTotal5, tabControl1.SelectedIndex);
+                        }
+
+                    }
+                    else
+                    {
+                        label_MensajeVenta.Text = "No existe este producto ";
+                        label_MensajeVenta.ForeColor = Color.Red;
+                    }
+                }
+                txtCodigo5.Text = "";
+                txtCodigo5.Focus();
+            }
+        }
+
+        private void cbxHistorial5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxHistorial5.Checked)
+            {
+                panel6.Visible = true;
+            }
+            else
+            {
+                panel6.Visible = false;
+            }
+        }
+
+        private void dgvCliente5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            idCliente = Convert.ToInt16(dgvCliente5.CurrentRow.Cells[0].Value);
+        }
+
+        private void txtPago5_TextChanged(object sender, EventArgs e)
+        {
+            valor = venta.pagosCliente(txtPago5, lblSucambio5, lblCambio5, lblPagocon5, lblTotal5);
+        }
+
+        private void btnCobrarImp5_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial5, cbxTarjeta5, txtPago5, lblCambio5, tabControl1.SelectedIndex, idCliente);
+                gb = null;
+                dtp = null;
+                pago = txtPago5.Text;
+                cambio = lblCambio5.Text;
+                printDocument1.Print();
+                restablecer5();
+            }
+        }
+        #endregion
     }
+
 }

@@ -39,7 +39,7 @@ namespace PuntodeVentaEstetica.Controller
                             ultimo = ultimoTicket[0].numeroTicket;
                         }
                         Ventas.Where(v => v.numeroTicket.Equals(ultimo)).Set(v => v.hora, hora).Update();
-                        e.Graphics.DrawString(String.Format("Biuty Life "), f1, Brushes.Black, 5, 10);
+                        e.Graphics.DrawString(String.Format("Beauty Life Studio"), f1, Brushes.Black, 5, 10);
                         e.Graphics.DrawString(String.Format("Calle geronimo hernandez #400"), f1, Brushes.Black, 5, 35);
                         e.Graphics.DrawString(String.Format("Col. insurgentes C.P. 34130 "), f1, Brushes.Black, 5, 60);
                         e.Graphics.DrawString(String.Format("Numero de ticket: " + ultimo), f1, Brushes.Black, 5, 85);

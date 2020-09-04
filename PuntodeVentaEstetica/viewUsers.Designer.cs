@@ -94,7 +94,7 @@
             this.btnUsuarioCancel.Location = new System.Drawing.Point(141, 335);
             this.btnUsuarioCancel.Name = "btnUsuarioCancel";
             this.btnUsuarioCancel.Size = new System.Drawing.Size(88, 40);
-            this.btnUsuarioCancel.TabIndex = 7;
+            this.btnUsuarioCancel.TabIndex = 6;
             this.btnUsuarioCancel.Text = "Cancelar";
             this.btnUsuarioCancel.UseVisualStyleBackColor = true;
             this.btnUsuarioCancel.Click += new System.EventHandler(this.btnUsuarioCancel_Click);
@@ -104,7 +104,7 @@
             this.btnUsuarioGuardar.Location = new System.Drawing.Point(35, 335);
             this.btnUsuarioGuardar.Name = "btnUsuarioGuardar";
             this.btnUsuarioGuardar.Size = new System.Drawing.Size(88, 40);
-            this.btnUsuarioGuardar.TabIndex = 6;
+            this.btnUsuarioGuardar.TabIndex = 4;
             this.btnUsuarioGuardar.Text = "Guardar";
             this.btnUsuarioGuardar.UseVisualStyleBackColor = true;
             this.btnUsuarioGuardar.Click += new System.EventHandler(this.btnUsuarioGuardar_Click_1);
@@ -125,7 +125,7 @@
             this.txtUsuarioPass.Location = new System.Drawing.Point(35, 272);
             this.txtUsuarioPass.Name = "txtUsuarioPass";
             this.txtUsuarioPass.Size = new System.Drawing.Size(194, 20);
-            this.txtUsuarioPass.TabIndex = 5;
+            this.txtUsuarioPass.TabIndex = 3;
             // 
             // lblUsuarioUser
             // 
@@ -143,7 +143,7 @@
             this.txtUsuarioUser.Location = new System.Drawing.Point(35, 200);
             this.txtUsuarioUser.Name = "txtUsuarioUser";
             this.txtUsuarioUser.Size = new System.Drawing.Size(194, 20);
-            this.txtUsuarioUser.TabIndex = 5;
+            this.txtUsuarioUser.TabIndex = 2;
             // 
             // lblUsuarioApellido
             // 
@@ -161,7 +161,7 @@
             this.txtUsuarioApellido.Location = new System.Drawing.Point(35, 130);
             this.txtUsuarioApellido.Name = "txtUsuarioApellido";
             this.txtUsuarioApellido.Size = new System.Drawing.Size(194, 20);
-            this.txtUsuarioApellido.TabIndex = 5;
+            this.txtUsuarioApellido.TabIndex = 1;
             // 
             // lblNombreUsuario
             // 
@@ -179,7 +179,7 @@
             this.txtUsuarioNombre.Location = new System.Drawing.Point(35, 63);
             this.txtUsuarioNombre.Name = "txtUsuarioNombre";
             this.txtUsuarioNombre.Size = new System.Drawing.Size(194, 20);
-            this.txtUsuarioNombre.TabIndex = 2;
+            this.txtUsuarioNombre.TabIndex = 0;
             // 
             // btnEliminar
             // 
@@ -187,7 +187,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(962, 441);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(76, 40);
-            this.btnEliminar.TabIndex = 9;
+            this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);

@@ -20,8 +20,6 @@ namespace PuntodeVentaEstetica
         {
             InitializeComponent();
             abrirFormulario(new viewEntry());
-            viewIngresos ing = new viewIngresos();
-            ing.Show();
         }
 
         private void abrirFormulario(Form formhijo)
@@ -75,7 +73,7 @@ namespace PuntodeVentaEstetica
 
         private void bunifuFlatButton6_Click(object sender, EventArgs e)
         {
-           // boton para el corte
+            abrirFormulario(new viewCorte());
         }
         #endregion
 

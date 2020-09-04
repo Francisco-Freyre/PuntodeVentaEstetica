@@ -17,12 +17,27 @@ namespace PuntodeVentaEstetica
         public viewIngresos()
         {
             InitializeComponent();
+            textBox1.Focus();
+            textBox1.Text = "$0.00";
         }
 
         private void btnAcep_Click(object sender, EventArgs e)
         {
             ingreso.insetarIngresoInicial(textBox1.Text);
-            this.Close();
+            Form1 formulario = new Form1();
+            formulario.Show();
+            this.Hide();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                ingreso.insetarIngresoInicial(textBox1.Text);
+                Form1 formulario = new Form1();
+                formulario.Show();
+                this.Hide();
+            }
         }
     }
 }

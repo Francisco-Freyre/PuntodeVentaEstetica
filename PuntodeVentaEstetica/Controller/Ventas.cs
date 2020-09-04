@@ -116,11 +116,12 @@ namespace PuntodeVentaEstetica.Controller
             else
             {
                 String saldoActual, IDCliente = null;
-                Decimal pagos, ingresosInicial;
+                Decimal pagos=0, ingresosInicial;
                 //pagos = Convert.ToDecimal(textBox_pagos.Text);
                 if (checkBoxHistorial.Checked == false && checkBoxTarjeta.Checked == false)
                 {
                     var ventaTempo = tempoVentas.Where(t => t.venta.Equals(venta)).ToList();
+                    var ing = ingresos.Where(i => i.fecha.Equals(fecha)).ToList();
                     ultimo++;
                     if (ventaTempo.Count > 0)
                     {
@@ -137,7 +138,12 @@ namespace PuntodeVentaEstetica.Controller
                                     .Value(v => v.fecha, fecha)
                                     .Value(v => v.hora, DateTime.Now.ToString("hh:mm:ss"))
                                     .Insert();
+                            pagos += Convert.ToDecimal(item.importe.Replace("$",""));
                         });
+                        pagos += Convert.ToDecimal(ing[0].ingreso.Replace("$",""));
+                        ingresos.Where(i => i.fecha.Equals(fecha))
+                                .Set(i => i.ingreso, String.Format("${0:#,###,###,##0.00####}", pagos))
+                                .Update();
                     }
                 }
                 else
@@ -180,6 +186,7 @@ namespace PuntodeVentaEstetica.Controller
                         if (checkBoxHistorial.Checked)
                         {
                             var ventaTempo = tempoVentas.Where(t => t.venta.Equals(venta)).ToList();
+                            var ing = ingresos.Where(i => i.fecha.Equals(fecha)).ToList();
                             ultimo++;
                             if (ventaTempo.Count > 0)
                             {
@@ -207,7 +214,13 @@ namespace PuntodeVentaEstetica.Controller
                                                     .Value(v => v.fecha, fecha)
                                                     .Value(v => v.hora, DateTime.Now.ToString("hh:mm:ss"))
                                                     .Insert();
+                                    pagos += Convert.ToDecimal(item.importe.Replace("$", ""));
                                 });
+
+                                pagos += Convert.ToDecimal(ing[0].ingreso.Replace("$", ""));
+                                ingresos.Where(i => i.fecha.Equals(fecha))
+                                        .Set(i => i.ingreso, String.Format("${0:#,###,###,##0.00####}", pagos))
+                                        .Update();
                             }
                         }
                         else
@@ -255,7 +268,7 @@ namespace PuntodeVentaEstetica.Controller
             {
                 importe = Convert.ToDecimal(label4.Text.Replace("$", ""));
                 var ingresosIni = ingresos.Where(i => i.fecha.Equals(fecha)).ToList();
-                decimal ingresostotales = Convert.ToDecimal(ingresosIni[0].ingresoInicial) + Convert.ToDecimal(ingresosIni[0].ingreso.Replace("$",""));
+                decimal ingresostotales = Convert.ToDecimal(ingresosIni[0].ingresoInicial.Replace("$", "")) + Convert.ToDecimal(ingresosIni[0].ingreso.Replace("$", ""));
                 pagar = importe;
                 pago = Convert.ToDecimal(textBox.Text);
                 if (pago >= pagar)

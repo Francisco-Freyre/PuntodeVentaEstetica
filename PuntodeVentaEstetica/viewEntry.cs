@@ -42,6 +42,26 @@ namespace PuntodeVentaEstetica
             {
                 Asistencia.insertar(Convert.ToInt16(txtId.Text));
                 Asistencia.mostrar(dgvAsistencias);
+                txtId.Text = "";
+            }
+        }
+
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (txtId.Text == "")
+                {
+                    lblId.Text = "Ingrese el identificador de usuario";
+                    lblId.ForeColor = Color.Red;
+                    txtId.Focus();
+                }
+                else
+                {
+                    Asistencia.insertar(Convert.ToInt16(txtId.Text));
+                    Asistencia.mostrar(dgvAsistencias);
+                    txtId.Text = "";
+                }
             }
         }
     }

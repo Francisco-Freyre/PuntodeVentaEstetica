@@ -89,6 +89,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(194, 20);
             this.txtId.TabIndex = 2;
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             // 
             // lblHora
             // 

@@ -121,7 +121,7 @@
             this.textBox1.Location = new System.Drawing.Point(354, 77);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 13;
+            this.textBox1.TabIndex = 10;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnEliminarProducto
@@ -130,7 +130,7 @@
             this.btnEliminarProducto.Location = new System.Drawing.Point(963, 573);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(76, 40);
-            this.btnEliminarProducto.TabIndex = 11;
+            this.btnEliminarProducto.TabIndex = 9;
             this.btnEliminarProducto.Text = "Eliminar";
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
             this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
@@ -231,7 +231,7 @@
             this.txtMinimo.Location = new System.Drawing.Point(35, 349);
             this.txtMinimo.Name = "txtMinimo";
             this.txtMinimo.Size = new System.Drawing.Size(194, 20);
-            this.txtMinimo.TabIndex = 11;
+            this.txtMinimo.TabIndex = 5;
             // 
             // lblExistencia
             // 
@@ -249,14 +249,14 @@
             this.txtExistencia.Location = new System.Drawing.Point(35, 280);
             this.txtExistencia.Name = "txtExistencia";
             this.txtExistencia.Size = new System.Drawing.Size(194, 20);
-            this.txtExistencia.TabIndex = 9;
+            this.txtExistencia.TabIndex = 4;
             // 
             // btnCancelarProducto
             // 
             this.btnCancelarProducto.Location = new System.Drawing.Point(141, 480);
             this.btnCancelarProducto.Name = "btnCancelarProducto";
             this.btnCancelarProducto.Size = new System.Drawing.Size(88, 40);
-            this.btnCancelarProducto.TabIndex = 7;
+            this.btnCancelarProducto.TabIndex = 8;
             this.btnCancelarProducto.Text = "Cancelar";
             this.btnCancelarProducto.UseVisualStyleBackColor = true;
             this.btnCancelarProducto.Click += new System.EventHandler(this.btnCancelarProducto_Click);
@@ -266,7 +266,7 @@
             this.btnGuardarProducto.Location = new System.Drawing.Point(35, 480);
             this.btnGuardarProducto.Name = "btnGuardarProducto";
             this.btnGuardarProducto.Size = new System.Drawing.Size(88, 40);
-            this.btnGuardarProducto.TabIndex = 6;
+            this.btnGuardarProducto.TabIndex = 7;
             this.btnGuardarProducto.Text = "Guardar";
             this.btnGuardarProducto.UseVisualStyleBackColor = true;
             this.btnGuardarProducto.Click += new System.EventHandler(this.btnGuardarProducto_Click);
@@ -287,7 +287,7 @@
             this.txtPrecioVenta.Location = new System.Drawing.Point(35, 212);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(194, 20);
-            this.txtPrecioVenta.TabIndex = 5;
+            this.txtPrecioVenta.TabIndex = 3;
             // 
             // lblCosto
             // 
@@ -305,7 +305,7 @@
             this.txtCosto.Location = new System.Drawing.Point(35, 146);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(194, 20);
-            this.txtCosto.TabIndex = 5;
+            this.txtCosto.TabIndex = 2;
             // 
             // lblDescripcion
             // 
@@ -323,7 +323,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(35, 83);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(194, 20);
-            this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.TabIndex = 1;
             // 
             // lblCodigo
             // 
@@ -341,7 +341,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(35, 25);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(194, 20);
-            this.txtCodigo.TabIndex = 2;
+            this.txtCodigo.TabIndex = 0;
             // 
             // panel1
             // 
@@ -384,7 +384,7 @@
             this.btnCatEliminar.Location = new System.Drawing.Point(270, 573);
             this.btnCatEliminar.Name = "btnCatEliminar";
             this.btnCatEliminar.Size = new System.Drawing.Size(76, 40);
-            this.btnCatEliminar.TabIndex = 11;
+            this.btnCatEliminar.TabIndex = 3;
             this.btnCatEliminar.Text = "Eliminar";
             this.btnCatEliminar.UseVisualStyleBackColor = true;
             this.btnCatEliminar.Click += new System.EventHandler(this.btnCatEliminar_Click);
@@ -440,7 +440,7 @@
             this.btnCatCancel.Location = new System.Drawing.Point(141, 157);
             this.btnCatCancel.Name = "btnCatCancel";
             this.btnCatCancel.Size = new System.Drawing.Size(88, 40);
-            this.btnCatCancel.TabIndex = 7;
+            this.btnCatCancel.TabIndex = 2;
             this.btnCatCancel.Text = "Cancelar";
             this.btnCatCancel.UseVisualStyleBackColor = true;
             this.btnCatCancel.Click += new System.EventHandler(this.btnCatCancel_Click);
@@ -450,7 +450,7 @@
             this.btnCatGuardar.Location = new System.Drawing.Point(35, 157);
             this.btnCatGuardar.Name = "btnCatGuardar";
             this.btnCatGuardar.Size = new System.Drawing.Size(88, 40);
-            this.btnCatGuardar.TabIndex = 6;
+            this.btnCatGuardar.TabIndex = 1;
             this.btnCatGuardar.Text = "Guardar";
             this.btnCatGuardar.UseVisualStyleBackColor = true;
             this.btnCatGuardar.Click += new System.EventHandler(this.btnCatGuardar_Click);
@@ -471,7 +471,7 @@
             this.txtCat.Location = new System.Drawing.Point(35, 63);
             this.txtCat.Name = "txtCat";
             this.txtCat.Size = new System.Drawing.Size(194, 20);
-            this.txtCat.TabIndex = 2;
+            this.txtCat.TabIndex = 0;
             // 
             // panel2
             // 
