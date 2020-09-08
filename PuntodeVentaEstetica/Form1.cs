@@ -75,6 +75,11 @@ namespace PuntodeVentaEstetica
         {
             abrirFormulario(new viewCorte());
         }
+
+        private void bunifuFlatButton8_Click(object sender, EventArgs e)
+        {
+            abrirFormulario(new viewVentas());
+        }
         #endregion
 
         //Metodos para la animacion del SideBar ###################################
