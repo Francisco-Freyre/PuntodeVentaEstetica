@@ -33,6 +33,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.menuTop = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnMaximizar = new System.Windows.Forms.PictureBox();
@@ -40,6 +42,7 @@
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.SideBar = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.bunifuFlatButton8 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton7 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton5 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -54,7 +57,6 @@
             this.CurvaSidebar = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.AnimationSidebar = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.AnimationSideBarBack = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.bunifuFlatButton8 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.menuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -70,6 +72,8 @@
             // menuTop
             // 
             this.menuTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            this.menuTop.Controls.Add(this.button2);
+            this.menuTop.Controls.Add(this.button1);
             this.menuTop.Controls.Add(this.btnRestaurar);
             this.menuTop.Controls.Add(this.btnMinimizar);
             this.menuTop.Controls.Add(this.btnMaximizar);
@@ -82,6 +86,30 @@
             this.menuTop.Name = "menuTop";
             this.menuTop.Size = new System.Drawing.Size(1300, 53);
             this.menuTop.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.AnimationSidebar.SetDecoration(this.button2, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.button2, BunifuAnimatorNS.DecorationType.None);
+            this.button2.Location = new System.Drawing.Point(131, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 32);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Salidas";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.AnimationSidebar.SetDecoration(this.button1, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.button1, BunifuAnimatorNS.DecorationType.None);
+            this.button1.Location = new System.Drawing.Point(50, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 32);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Entradas";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnRestaurar
             // 
@@ -188,6 +216,43 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(225, 612);
             this.bunifuGradientPanel1.TabIndex = 1;
             this.bunifuGradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuGradientPanel1_Paint);
+            // 
+            // bunifuFlatButton8
+            // 
+            this.bunifuFlatButton8.Activecolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton8.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton8.BorderRadius = 0;
+            this.bunifuFlatButton8.ButtonText = "      Inventario";
+            this.bunifuFlatButton8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AnimationSidebar.SetDecoration(this.bunifuFlatButton8, BunifuAnimatorNS.DecorationType.None);
+            this.AnimationSideBarBack.SetDecoration(this.bunifuFlatButton8, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuFlatButton8.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton8.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton8.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton8.Iconimage")));
+            this.bunifuFlatButton8.Iconimage_right = null;
+            this.bunifuFlatButton8.Iconimage_right_Selected = null;
+            this.bunifuFlatButton8.Iconimage_Selected = null;
+            this.bunifuFlatButton8.IconMarginLeft = 0;
+            this.bunifuFlatButton8.IconMarginRight = 0;
+            this.bunifuFlatButton8.IconRightVisible = true;
+            this.bunifuFlatButton8.IconRightZoom = 0D;
+            this.bunifuFlatButton8.IconVisible = true;
+            this.bunifuFlatButton8.IconZoom = 90D;
+            this.bunifuFlatButton8.IsTab = false;
+            this.bunifuFlatButton8.Location = new System.Drawing.Point(3, 490);
+            this.bunifuFlatButton8.Name = "bunifuFlatButton8";
+            this.bunifuFlatButton8.Normalcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton8.OnHovercolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton8.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton8.selected = false;
+            this.bunifuFlatButton8.Size = new System.Drawing.Size(219, 48);
+            this.bunifuFlatButton8.TabIndex = 8;
+            this.bunifuFlatButton8.Text = "      Inventario";
+            this.bunifuFlatButton8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton8.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton8.TextFont = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton8.Click += new System.EventHandler(this.bunifuFlatButton8_Click);
             // 
             // bunifuFlatButton7
             // 
@@ -466,7 +531,7 @@
             // 
             this.AnimationSidebar.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
             this.AnimationSideBarBack.SetDecoration(this.pictureBox1, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::PuntodeVentaEstetica.Properties.Resources.logo2;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(219, 96);
@@ -547,43 +612,6 @@
             animation2.TransparencyCoeff = 0F;
             this.AnimationSideBarBack.DefaultAnimation = animation2;
             // 
-            // bunifuFlatButton8
-            // 
-            this.bunifuFlatButton8.Activecolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton8.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton8.BorderRadius = 0;
-            this.bunifuFlatButton8.ButtonText = "      Inventario";
-            this.bunifuFlatButton8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AnimationSidebar.SetDecoration(this.bunifuFlatButton8, BunifuAnimatorNS.DecorationType.None);
-            this.AnimationSideBarBack.SetDecoration(this.bunifuFlatButton8, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuFlatButton8.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton8.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton8.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton8.Iconimage")));
-            this.bunifuFlatButton8.Iconimage_right = null;
-            this.bunifuFlatButton8.Iconimage_right_Selected = null;
-            this.bunifuFlatButton8.Iconimage_Selected = null;
-            this.bunifuFlatButton8.IconMarginLeft = 0;
-            this.bunifuFlatButton8.IconMarginRight = 0;
-            this.bunifuFlatButton8.IconRightVisible = true;
-            this.bunifuFlatButton8.IconRightZoom = 0D;
-            this.bunifuFlatButton8.IconVisible = true;
-            this.bunifuFlatButton8.IconZoom = 90D;
-            this.bunifuFlatButton8.IsTab = false;
-            this.bunifuFlatButton8.Location = new System.Drawing.Point(3, 490);
-            this.bunifuFlatButton8.Name = "bunifuFlatButton8";
-            this.bunifuFlatButton8.Normalcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton8.OnHovercolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton8.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton8.selected = false;
-            this.bunifuFlatButton8.Size = new System.Drawing.Size(219, 48);
-            this.bunifuFlatButton8.TabIndex = 8;
-            this.bunifuFlatButton8.Text = "      Inventario";
-            this.bunifuFlatButton8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton8.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton8.TextFont = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton8.Click += new System.EventHandler(this.bunifuFlatButton8_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -637,6 +665,8 @@
         private BunifuAnimatorNS.BunifuTransition AnimationSideBarBack;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton7;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton8;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

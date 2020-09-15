@@ -52,6 +52,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblServicio = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblProducto = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -59,6 +66,8 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -101,7 +110,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(12, 140);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 97);
+            this.groupBox1.Size = new System.Drawing.Size(336, 97);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inicio";
@@ -124,7 +133,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox2.Location = new System.Drawing.Point(354, 140);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(322, 97);
+            this.groupBox2.Size = new System.Drawing.Size(343, 97);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Salidas";
@@ -156,9 +165,9 @@
             this.groupBox3.Controls.Add(this.lblEntrada);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox3.Location = new System.Drawing.Point(694, 140);
+            this.groupBox3.Location = new System.Drawing.Point(703, 140);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(322, 97);
+            this.groupBox3.Size = new System.Drawing.Size(335, 97);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Entradas";
@@ -192,7 +201,7 @@
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox4.Location = new System.Drawing.Point(12, 266);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(322, 97);
+            this.groupBox4.Size = new System.Drawing.Size(336, 97);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Efectivo";
@@ -226,7 +235,7 @@
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox5.Location = new System.Drawing.Point(354, 266);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(322, 97);
+            this.groupBox5.Size = new System.Drawing.Size(343, 97);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tarjeta";
@@ -258,9 +267,9 @@
             this.groupBox6.Controls.Add(this.lblTotal);
             this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox6.Location = new System.Drawing.Point(694, 266);
+            this.groupBox6.Location = new System.Drawing.Point(703, 266);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(322, 97);
+            this.groupBox6.Size = new System.Drawing.Size(335, 97);
             this.groupBox6.TabIndex = 13;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Total";
@@ -324,6 +333,79 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "Imprimir";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.lblServicio);
+            this.groupBox7.Controls.Add(this.label4);
+            this.groupBox7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox7.Location = new System.Drawing.Point(12, 396);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(366, 97);
+            this.groupBox7.TabIndex = 18;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Servicios";
+            // 
+            // lblServicio
+            // 
+            this.lblServicio.AutoSize = true;
+            this.lblServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServicio.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblServicio.Location = new System.Drawing.Point(238, 40);
+            this.lblServicio.Name = "lblServicio";
+            this.lblServicio.Size = new System.Drawing.Size(71, 25);
+            this.lblServicio.TabIndex = 8;
+            this.lblServicio.Text = "$0.00";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(6, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(226, 25);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Ventas de servicios:";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.lblProducto);
+            this.groupBox8.Controls.Add(this.label8);
+            this.groupBox8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox8.Location = new System.Drawing.Point(384, 396);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(376, 97);
+            this.groupBox8.TabIndex = 19;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Productos";
+            // 
+            // lblProducto
+            // 
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblProducto.Location = new System.Drawing.Point(248, 40);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(71, 25);
+            this.lblProducto.TabIndex = 8;
+            this.lblProducto.Text = "$0.00";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(6, 40);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(236, 25);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Ventas de productos:";
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // viewCorte
             // 
@@ -331,6 +413,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1050, 647);
+            this.Controls.Add(this.groupBox8);
+            this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label14);
@@ -359,6 +443,10 @@
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,5 +478,12 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label lblServicio;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.Label label8;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

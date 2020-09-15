@@ -20,7 +20,7 @@ namespace PuntodeVentaEstetica
         private int idCliente = -1, idCliente2 = -1, idCliente3 = -1, idCliente4 = -1, idCliente5 = -1, idCliente6 = -1, idCliente7 = -1, idCliente8 = -1, idCliente9 = -1, idCliente10 = -1;
         private GroupBox gb;
         private DateTimePicker dtp;
-        private string tipo = "venta", usuario, pago, cambio;
+        private string tipo, usuario, pago, cambio;
         public viewSales()
         {
             InitializeComponent();
@@ -196,11 +196,6 @@ namespace PuntodeVentaEstetica
             }
         }
 
-        private void btnCobrar_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void checkBox9_ChangeUICues(object sender, UICuesEventArgs e)
         {
 
@@ -345,6 +340,22 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago.Text;
                 cambio = lblCambio.Text;
+                tipo = "venta";
+                printDocument1.Print();
+                restablecer();
+            }
+        }
+
+        private void btnCobrar_Click_1(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial, cbxTarjeta, txtPago, lblCambio, tabControl1.SelectedIndex, idCliente);
+                gb = null;
+                dtp = null;
+                pago = txtPago.Text;
+                cambio = lblCambio.Text;
+                tipo = "venta_sin_ticket";
                 printDocument1.Print();
                 restablecer();
             }
@@ -353,6 +364,15 @@ namespace PuntodeVentaEstetica
         private void dgvClient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv, tabControl1.SelectedIndex);
+            venta.importes(lblTotal, tabControl1.SelectedIndex);
         }
 
         private void dgvClient_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -442,10 +462,35 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago2.Text;
                 cambio = lblCambio2.Text;
+                tipo = "venta";
                 printDocument1.Print();
                 restablecer2();
             }
-        }       
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial2, cbxTarjeta2, txtPago2, lblCambio2, tabControl1.SelectedIndex, idCliente2);
+                gb = null;
+                dtp = null;
+                pago = txtPago2.Text;
+                cambio = lblCambio2.Text;
+                tipo = "venta_sin_ticket";
+                printDocument1.Print();
+                restablecer2();
+            }
+        }
+
+        private void dgv2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv2.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv2.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv2, tabControl1.SelectedIndex);
+            venta.importes(lblTotal2, tabControl1.SelectedIndex);
+        }
 
         #endregion
 
@@ -526,12 +571,35 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago3.Text;
                 cambio = lblCambio3.Text;
+                tipo = "venta";
                 printDocument1.Print();
                 restablecer3();
             }
         }
 
-       
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial3, cbxTarjeta3, txtPago3, lblCambio3, tabControl1.SelectedIndex, idCliente3);
+                gb = null;
+                dtp = null;
+                pago = txtPago3.Text;
+                cambio = lblCambio3.Text;
+                tipo = "venta_sin_ticket";
+                printDocument1.Print();
+                restablecer3();
+            }
+        }
+
+        private void dgv3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv3.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv3.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv3, tabControl1.SelectedIndex);
+            venta.importes(lblTotal3, tabControl1.SelectedIndex);
+        }
 
         #endregion
 
@@ -608,10 +676,36 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago4.Text;
                 cambio = lblCambio4.Text;
+                tipo = "venta";
                 printDocument1.Print();
                 restablecer4();
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial4, cbxTarjeta4, txtPago4, lblCambio4, tabControl1.SelectedIndex, idCliente4);
+                gb = null;
+                dtp = null;
+                pago = txtPago4.Text;
+                cambio = lblCambio4.Text;
+                tipo = "venta_sin_ticket";
+                printDocument1.Print();
+                restablecer4();
+            }
+        }
+
+        private void dgv4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv4.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv4.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv4, tabControl1.SelectedIndex);
+            venta.importes(lblTotal4, tabControl1.SelectedIndex);
+        }
+
         #endregion
 
         //Venta 5 #########################
@@ -687,11 +781,35 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago5.Text;
                 cambio = lblCambio5.Text;
+                tipo = "venta";
                 printDocument1.Print();
                 restablecer5();
             }
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial5, cbxTarjeta5, txtPago5, lblCambio5, tabControl1.SelectedIndex, idCliente5);
+                gb = null;
+                dtp = null;
+                pago = txtPago5.Text;
+                cambio = lblCambio5.Text;
+                tipo = "venta_sin_ticket";
+                printDocument1.Print();
+                restablecer5();
+            }
+        }
+
+        private void dgv5_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv5.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv5.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv5, tabControl1.SelectedIndex);
+            venta.importes(lblTotal5, tabControl1.SelectedIndex);
+        }
         #endregion
 
         // Venta 6 ########################
@@ -768,11 +886,35 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago6.Text;
                 cambio = lblCambio6.Text;
+                tipo = "venta";
                 printDocument1.Print();
                 restablecer6();
             }
         }
 
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial6, cbxTarjeta6, txtPago6, lblCambio6, tabControl1.SelectedIndex, idCliente6);
+                gb = null;
+                dtp = null;
+                pago = txtPago6.Text;
+                cambio = lblCambio6.Text;
+                tipo = "venta";
+                printDocument1.Print();
+                restablecer6();
+            }
+        }
+
+        private void dgv6_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv6.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv6.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv6, tabControl1.SelectedIndex);
+            venta.importes(lblTotal6, tabControl1.SelectedIndex);
+        }
         #endregion
 
         //Venta 7 #########################
@@ -849,11 +991,35 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago7.Text;
                 cambio = lblCambio7.Text;
+                tipo = "venta";
                 printDocument1.Print();
                 restablecer7();
             }
         }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial7, cbxTarjeta7, txtPago7, lblCambio7, tabControl1.SelectedIndex, idCliente7);
+                gb = null;
+                dtp = null;
+                pago = txtPago7.Text;
+                cambio = lblCambio7.Text;
+                tipo = "venta_sin_ticket";
+                printDocument1.Print();
+                restablecer7();
+            }
+        }
+
+        private void dgv7_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv7.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv7.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv7, tabControl1.SelectedIndex);
+            venta.importes(lblTotal7, tabControl1.SelectedIndex);
+        }
         #endregion
 
         //Venta 8 #########################
@@ -870,7 +1036,7 @@ namespace PuntodeVentaEstetica
                 }
                 else
                 {
-                    var producto = venta.buscarProductos(txtCodigo3.Text);
+                    var producto = venta.buscarProductos(txtCodigo8.Text);
                     if (producto.Count > 0)
                     {
                         if (producto[0].existencia.Equals(0))
@@ -930,9 +1096,38 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago8.Text;
                 cambio = lblCambio8.Text;
+                tipo = "venta";
                 printDocument1.Print();
                 restablecer8();
             }
+        }
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial8, cbxTarjeta8, txtPago8, lblCambio8, tabControl1.SelectedIndex, idCliente8);
+                gb = null;
+                dtp = null;
+                pago = txtPago8.Text;
+                cambio = lblCambio8.Text;
+                tipo = "venta_sin_ticket";
+                printDocument1.Print();
+                restablecer8();
+            }
+        }
+
+        private void dgv2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgv8_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv8.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv8.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv8, tabControl1.SelectedIndex);
+            venta.importes(lblTotal8, tabControl1.SelectedIndex);
         }
 
         #endregion
@@ -951,7 +1146,7 @@ namespace PuntodeVentaEstetica
                 }
                 else
                 {
-                    var producto = venta.buscarProductos(txtCodigo3.Text);
+                    var producto = venta.buscarProductos(txtCodigo9.Text);
                     if (producto.Count > 0)
                     {
                         if (producto[0].existencia.Equals(0))
@@ -1011,9 +1206,34 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago9.Text;
                 cambio = lblCambio9.Text;
+                tipo = "venta";
                 printDocument1.Print();
                 restablecer9();
             }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial9, cbxTarjeta9, txtPago9, lblCambio9, tabControl1.SelectedIndex, idCliente9);
+                gb = null;
+                dtp = null;
+                pago = txtPago9.Text;
+                cambio = lblCambio9.Text;
+                tipo = "venta_sin_ticket";
+                printDocument1.Print();
+                restablecer9();
+            }
+        }
+
+        private void dgv9_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv9.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv9.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv9, tabControl1.SelectedIndex);
+            venta.importes(lblTotal9, tabControl1.SelectedIndex);
         }
 
         #endregion
@@ -1044,7 +1264,7 @@ namespace PuntodeVentaEstetica
                 }
                 else
                 {
-                    var producto = venta.buscarProductos(txtCodigo3.Text);
+                    var producto = venta.buscarProductos(txtCodigo10.Text);
                     if (producto.Count > 0)
                     {
                         if (producto[0].existencia.Equals(0))
@@ -1092,11 +1312,35 @@ namespace PuntodeVentaEstetica
                 dtp = null;
                 pago = txtPago10.Text;
                 cambio = lblCambio10.Text;
+                tipo = "cortediario";
                 printDocument1.Print();
                 restablecer10();
             }
         }
 
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (valor)
+            {
+                venta.cobrar(cbxHistorial10, cbxTarjeta10, txtPago10, lblCambio10, tabControl1.SelectedIndex, idCliente10);
+                gb = null;
+                dtp = null;
+                pago = txtPago10.Text;
+                cambio = lblCambio10.Text;
+                tipo = "venta_sin_ticket";
+                printDocument1.Print();
+                restablecer10();
+            }
+        }
+
+        private void dgv10_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string codigo = Convert.ToString(dgv10.CurrentRow.Cells[1].Value);
+            int cant = Convert.ToInt32(dgv10.CurrentRow.Cells[4].Value);
+            venta.borrarVenta(codigo, cant, tabControl1.SelectedIndex);
+            venta.buscarVentaTempo(dgv10, tabControl1.SelectedIndex);
+            venta.importes(lblTotal10, tabControl1.SelectedIndex);
+        }
         #endregion
     }
 }

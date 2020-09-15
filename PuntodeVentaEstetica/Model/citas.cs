@@ -28,5 +28,8 @@ namespace PuntodeVentaEstetica.Model
 
         [DisplayName("Hora")]
         public string hora { set; get; }
+
+        [DisplayName("Usuario")]
+        public string usuario { set; get; }
     }
 }

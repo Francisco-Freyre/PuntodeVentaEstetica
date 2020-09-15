@@ -34,5 +34,9 @@ namespace PuntodeVentaEstetica.Connection
         public ITable<ventasClientes> ventasClientes { get { return GetTable<ventasClientes>(); } }
 
         public ITable<ingresos> ingresos { get { return GetTable<ingresos>(); } }
+
+        public ITable<salidas> salidas { get { return GetTable<salidas>(); } }
+
+        public ITable<entradas> entradas { get { return GetTable<entradas>(); } }
     }
 }

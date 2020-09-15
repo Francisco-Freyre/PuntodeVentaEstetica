@@ -132,8 +132,10 @@
     <Compile Include="Model\categorias.cs" />
     <Compile Include="Model\citas.cs" />
     <Compile Include="Model\clientes.cs" />
+    <Compile Include="Model\entradas.cs" />
     <Compile Include="Model\ingresos.cs" />
     <Compile Include="Model\productos.cs" />
+    <Compile Include="Model\salidas.cs" />
     <Compile Include="Model\tempoVentas.cs" />
     <Compile Include="Model\usuarios.cs" />
     <Compile Include="Model\ventas.cs" />
@@ -159,6 +161,12 @@
     <Compile Include="viewCustomer.Designer.cs">
       <DependentUpon>viewCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewEntradas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewEntradas.Designer.cs">
+      <DependentUpon>viewEntradas.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewEntry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +190,12 @@
     </Compile>
     <Compile Include="viewSales.Designer.cs">
       <DependentUpon>viewSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewSalidas.Designer.cs">
+      <DependentUpon>viewSalidas.cs</DependentUpon>
     </Compile>
     <Compile Include="viewUsers.cs">
       <SubType>Form</SubType>
@@ -209,6 +223,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="viewCitas.resx">
       <DependentUpon>viewCitas.cs</DependentUpon>
@@ -218,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewCustomer.resx">
       <DependentUpon>viewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewEntradas.resx">
+      <DependentUpon>viewEntradas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewEntry.resx">
       <DependentUpon>viewEntry.cs</DependentUpon>
@@ -230,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewSales.resx">
       <DependentUpon>viewSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewSalidas.resx">
+      <DependentUpon>viewSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewUsers.resx">
       <DependentUpon>viewUsers.cs</DependentUpon>
@@ -279,6 +300,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\logo2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

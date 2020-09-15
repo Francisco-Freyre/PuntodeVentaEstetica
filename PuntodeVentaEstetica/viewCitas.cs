@@ -20,6 +20,10 @@ namespace PuntodeVentaEstetica
         {
             InitializeComponent();
             restablecer();
+            cbxUsuario.DataSource = cita.GetUsuarios();
+            cbxUsuario.DisplayMember = "nombre";
+            cbxUsuarios2.DataSource = cita.GetUsuarios();
+            cbxUsuarios2.DisplayMember = "nombre";
         }
 
         public void restablecer()
@@ -41,7 +45,7 @@ namespace PuntodeVentaEstetica
             txtTelefono.Text = "";
             txtServicio.Text = "";
 
-            cita.buscarCitas(dgv, "");
+            cita.buscarCitas(dgv, cbxUsuarios2.Text, dtp2);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -66,14 +70,14 @@ namespace PuntodeVentaEstetica
             }
             else
             {
-                cita.guardarCita(txtNombre.Text, txtTelefono.Text, txtServicio.Text, dtp, cbHoras.Text + ":" + cbMinutos.Text);
+                cita.guardarCita(txtNombre.Text, txtTelefono.Text, txtServicio.Text, dtp, cbHoras.Text + ":" + cbMinutos.Text, cbxUsuario.Text);
                 restablecer();
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            cita.buscarCitas(dgv, textBox1.Text);
+            cita.buscarCitas(dgv, cbxUsuarios2.Text, dtp2);
         }
 
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -91,6 +95,21 @@ namespace PuntodeVentaEstetica
         {
             cita.borrar(idCita);
             restablecer();
+        }
+
+        private void dtp2_ValueChanged(object sender, EventArgs e)
+        {
+            cita.buscarCitas(dgv, cbxUsuarios2.Text, dtp2);
+        }
+
+        private void cbxUsuarios2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxUsuarios2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cita.buscarCitas(dgv, cbxUsuarios2.Text, dtp2);
         }
     }
 }

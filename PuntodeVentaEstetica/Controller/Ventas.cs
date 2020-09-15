@@ -103,6 +103,29 @@ namespace PuntodeVentaEstetica.Controller
             }
         }
 
+        public void borrarVenta(string codigo, int cant, int venta)
+        {
+            int cantidad = 0, existencia = 0;
+            var ventatemp = tempoVentas.Where(t => t.codigo.Equals(codigo) && t.venta.Equals(venta)).ToList();
+            cantidad = ventatemp[0].cantidad;
+            var producto = productos.Where(p => p.codigo.Equals(codigo)).ToList();
+            existencia = producto[0].existencia;
+
+            if (cant == 1)
+            {
+                existencia += cantidad;
+                tempoVentas.Where(t => t.idTempo == ventatemp[0].idTempo && t.venta.Equals(venta)).Delete();
+            }
+            else
+            {
+                existencia++;
+                guardarVentasTempo(codigo, 1, venta);
+            }
+            productos.Where(p => p.idProducto.Equals(producto[0].idProducto))
+                        .Set(t => t.existencia, existencia)
+                        .Update();
+        }
+
         public void cobrar(CheckBox checkBoxHistorial, CheckBox checkBoxTarjeta , TextBox textBox_pagos, Label label, int venta, int idCliente)
         {
             var ultimoTicket = Ventas.OrderByDescending(v => v.numeroTicket).ToList();

@@ -13,23 +13,21 @@ namespace PuntodeVentaEstetica.Controller
 {
     class Cita : Conexion
     {
-        public void buscarCitas(DataGridView dataGridView, string campo)
+        public List<usuarios> GetUsuarios()
         {
-            string fecha = DateTime.Now.ToString("dd/MMM/yyy");
+            return usuarios.ToList();
+        }
+
+        public void buscarCitas(DataGridView dataGridView, string usuario, DateTimePicker dtp)
+        {
             List<citas> query;
-            if (campo.Equals(""))
-            {
-                query = citas.Where(c => c.fecha.Equals(fecha)).ToList();
-            }
-            else
-            {
-                query = citas.Where(p => p.nombre.Contains(campo) || p.fecha.Contains(campo) || p.hora.Contains(campo)).ToList();
-            }
+
+            query = citas.Where(p => p.fecha.Contains(dtp.Value.Date.ToString("dd/MMM/yyy")) && p.usuario.Contains(usuario)).OrderBy(p => p.hora).ToList();
             dataGridView.DataSource = query;
             dataGridView.Columns[0].Visible = false;
         }
 
-        internal void guardarCita(string nombre, string telefono, string servicio, DateTimePicker dtp, string hora)
+        internal void guardarCita(string nombre, string telefono, string servicio, DateTimePicker dtp, string hora, string usuario)
         {
 
             var valorCita = citas.Where(p => p.nombre.Equals(nombre) && p.fecha.Equals(dtp.Value.Date.ToString("dd/MMM/yyy"))).ToList();
@@ -41,6 +39,7 @@ namespace PuntodeVentaEstetica.Controller
                          .Set(p => p.concepto, servicio)
                          .Set(p => p.fecha, dtp.Value.Date.ToString("dd/MMM/yyy"))
                          .Set(p => p.hora, hora)
+                         .Set(p => p.usuario, usuario)
                          .Update();
             }
             else
@@ -50,6 +49,7 @@ namespace PuntodeVentaEstetica.Controller
                          .Value(p => p.concepto, servicio)
                          .Value(p => p.fecha, dtp.Value.Date.ToString("dd/MMM/yyy"))
                          .Value(p => p.hora, hora)
+                         .Value(p => p.usuario, usuario)
                          .Insert();
             }
         }

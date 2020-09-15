@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,7 +49,11 @@
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.cbxUsuario = new System.Windows.Forms.ComboBox();
+            this.dtp2 = new System.Windows.Forms.DateTimePicker();
+            this.cbxUsuarios2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -78,6 +82,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cbxUsuario);
+            this.panel2.Controls.Add(this.lblUsuario);
             this.panel2.Controls.Add(this.dtp);
             this.panel2.Controls.Add(this.cbMinutos);
             this.panel2.Controls.Add(this.cbHoras);
@@ -99,7 +105,7 @@
             // 
             // dtp
             // 
-            this.dtp.Location = new System.Drawing.Point(35, 273);
+            this.dtp.Location = new System.Drawing.Point(35, 367);
             this.dtp.Name = "dtp";
             this.dtp.Size = new System.Drawing.Size(194, 20);
             this.dtp.TabIndex = 3;
@@ -168,7 +174,7 @@
             "57",
             "58",
             "59"});
-            this.cbMinutos.Location = new System.Drawing.Point(141, 348);
+            this.cbMinutos.Location = new System.Drawing.Point(141, 442);
             this.cbMinutos.Name = "cbMinutos";
             this.cbMinutos.Size = new System.Drawing.Size(88, 21);
             this.cbMinutos.TabIndex = 5;
@@ -202,7 +208,7 @@
             "22",
             "23",
             "24"});
-            this.cbHoras.Location = new System.Drawing.Point(35, 348);
+            this.cbHoras.Location = new System.Drawing.Point(35, 442);
             this.cbHoras.Name = "cbHoras";
             this.cbHoras.Size = new System.Drawing.Size(88, 21);
             this.cbHoras.TabIndex = 4;
@@ -212,7 +218,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.lblHora.Location = new System.Drawing.Point(31, 311);
+            this.lblHora.Location = new System.Drawing.Point(31, 405);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(43, 19);
             this.lblHora.TabIndex = 13;
@@ -220,7 +226,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(141, 415);
+            this.btnCancel.Location = new System.Drawing.Point(141, 509);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(88, 40);
             this.btnCancel.TabIndex = 7;
@@ -229,7 +235,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(35, 415);
+            this.btnGuardar.Location = new System.Drawing.Point(35, 509);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(88, 40);
             this.btnGuardar.TabIndex = 6;
@@ -242,7 +248,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFecha.ForeColor = System.Drawing.Color.LavenderBlush;
-            this.lblFecha.Location = new System.Drawing.Point(31, 234);
+            this.lblFecha.Location = new System.Drawing.Point(31, 328);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(49, 19);
             this.lblFecha.TabIndex = 4;
@@ -310,14 +316,14 @@
             this.dgv.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(70)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv.ColumnHeadersHeight = 27;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv.EnableHeadersVisualStyles = false;
@@ -327,12 +333,12 @@
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(769, 350);
             this.dgv.TabIndex = 9;
@@ -360,13 +366,105 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Buscar:";
             // 
-            // textBox1
+            // lblUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(330, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.lblUsuario.Location = new System.Drawing.Point(31, 242);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(59, 19);
+            this.lblUsuario.TabIndex = 15;
+            this.lblUsuario.Text = "Usuario:";
+            // 
+            // cbxUsuario
+            // 
+            this.cbxUsuario.FormattingEnabled = true;
+            this.cbxUsuario.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"});
+            this.cbxUsuario.Location = new System.Drawing.Point(35, 283);
+            this.cbxUsuario.Name = "cbxUsuario";
+            this.cbxUsuario.Size = new System.Drawing.Size(194, 21);
+            this.cbxUsuario.TabIndex = 16;
+            // 
+            // dtp2
+            // 
+            this.dtp2.Location = new System.Drawing.Point(330, 90);
+            this.dtp2.Name = "dtp2";
+            this.dtp2.Size = new System.Drawing.Size(194, 20);
+            this.dtp2.TabIndex = 12;
+            this.dtp2.ValueChanged += new System.EventHandler(this.dtp2_ValueChanged);
+            // 
+            // cbxUsuarios2
+            // 
+            this.cbxUsuarios2.FormattingEnabled = true;
+            this.cbxUsuarios2.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24"});
+            this.cbxUsuarios2.Location = new System.Drawing.Point(599, 89);
+            this.cbxUsuarios2.Name = "cbxUsuarios2";
+            this.cbxUsuarios2.Size = new System.Drawing.Size(194, 21);
+            this.cbxUsuarios2.TabIndex = 18;
+            this.cbxUsuarios2.SelectedIndexChanged += new System.EventHandler(this.cbxUsuarios2_SelectedIndexChanged);
+            this.cbxUsuarios2.SelectedValueChanged += new System.EventHandler(this.cbxUsuarios2_SelectedValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.label3.Location = new System.Drawing.Point(534, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 19);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Usuario:";
             // 
             // viewCitas
             // 
@@ -374,8 +472,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.ClientSize = new System.Drawing.Size(1050, 647);
+            this.Controls.Add(this.cbxUsuarios2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dtp2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.panel2);
@@ -414,6 +514,10 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.DateTimePicker dtp;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbxUsuario;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.DateTimePicker dtp2;
+        private System.Windows.Forms.ComboBox cbxUsuarios2;
+        private System.Windows.Forms.Label label3;
     }
 }
